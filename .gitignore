@@ -1,0 +1,18 @@
+# SO / editores
+.DS_Store
+Thumbs.db
+*.swp
+.idea/
+.vscode/
+
+# Node (solo tooling de desarrollo; no hay build)
+node_modules/
+npm-debug.log*
+
+# Vercel
+.vercel
+
+# Locales
+.env
+.env.*
+*.zip
