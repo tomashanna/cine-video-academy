@@ -1,0 +1,12 @@
+# Configuración de lychee (enlaces externos). El job de CI es informativo: no bloquea.
+max_concurrency = 8
+timeout = 20
+max_retries = 2
+# Muchos medios bloquean bots (403/429) aunque el enlace funcione en un navegador.
+accept = ["200..=299", "403", "429"]
+exclude = [
+  # preconnect a Google Fonts: los dominios raíz responden 404 por diseño
+  '^https://fonts\.googleapis\.com/?$',
+  '^https://fonts\.gstatic\.com/?$',
+]
+exclude_path = ["node_modules", ".git"]
