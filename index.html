@@ -49,7 +49,7 @@ body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);
   font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased;letter-spacing:-.003em}
 img{max-width:100%;display:block}
 a{color:var(--amber);text-decoration:none} a:hover{text-decoration:underline}
-h1,h2,h3,h4{text-wrap:balance;letter-spacing:-.02em;line-height:1.12;margin:0}
+h1,h2,h3:not(.h4),h4:not(.h5),h3.h4{text-wrap:balance;letter-spacing:-.02em;line-height:1.12;margin:0}
 p{margin:0 0 1em}
 :focus-visible{outline:2px solid var(--amber);outline-offset:3px;border-radius:3px}
 
@@ -114,7 +114,8 @@ p{margin:0 0 1em}
 .module h2{font-size:clamp(27px,3.6vw,38px);font-weight:800}
 .module__lead{font-size:19px;color:var(--ink-dim);max-width:64ch;margin-top:12px}
 .objectives{margin:22px 0 0;padding:16px 18px;background:var(--bg-2);border:1px solid var(--line);border-radius:12px}
-.objectives h4{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:9px}
+.objectives h4,
+.objectives h3.h4{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:9px}
 .objectives ul{margin:0;padding-left:18px;color:var(--ink-dim);font-size:15px}
 .objectives li{margin:3px 0}
 .module__body{display:flex;flex-direction:column;gap:26px;max-width:var(--col)}
@@ -193,9 +194,10 @@ p{margin:0 0 1em}
 .dodont{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 @media(max-width:560px){.dodont{grid-template-columns:1fr}}
 .dodont__c{border:1px solid var(--line);border-radius:11px;padding:14px 16px;background:var(--bg-2);font-size:14.5px}
-.dodont__c h5{margin:0 0 7px;font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase}
-.dodont__c.do{border-color:rgba(99,185,126,.4)} .dodont__c.do h5{color:var(--good)}
-.dodont__c.dont{border-color:rgba(229,96,93,.4)} .dodont__c.dont h5{color:var(--danger)}
+.dodont__c h5,
+.dodont__c h4.h5{margin:0 0 7px;font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase}
+.dodont__c.do{border-color:rgba(99,185,126,.4)} .dodont__c.do h5, .dodont__c.do h4.h5{color:var(--good)}
+.dodont__c.dont{border-color:rgba(229,96,93,.4)} .dodont__c.dont h5, .dodont__c.dont h4.h5{color:var(--danger)}
 .dodont__c ul{margin:0;padding-left:17px;color:var(--ink-dim)} .dodont__c li{margin:3px 0}
 
 /* ---------- component: ⚠️ safety banner ---------- */
@@ -206,7 +208,8 @@ p{margin:0 0 1em}
 
 /* ---------- checklist ---------- */
 .checklist{margin-top:10px;border:1px solid var(--line);border-radius:12px;background:var(--bg-2);padding:16px 20px}
-.checklist h4{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:10px}
+.checklist h4,
+.checklist h3.h4{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:10px}
 .checklist label{display:flex;gap:10px;align-items:flex-start;padding:5px 0;font-size:14.5px;color:var(--ink-dim);cursor:pointer}
 .checklist input{margin-top:4px;accent-color:var(--amber)}
 
@@ -389,7 +392,7 @@ p{margin:0 0 1em}
           <h2>Cómo usar esta academia — y por qué existe</h2>
           <p class="module__lead">Perdimos al director de fotografía que dirigía nuestras tomas. Este documento es el oficio que se fue, reconstruido y hecho reutilizable — para que cualquiera del equipo pueda producir video con criterio profesional.</p>
           <div class="objectives">
-            <h4>Al terminar este módulo vas a poder</h4>
+            <h3 class="h4">Al terminar este módulo vas a poder</h3>
             <ul>
               <li>Reconocer por qué un video "se ve amateur" aunque no sepas nombrar qué falla.</li>
               <li>Leer cualquier módulo: entender sus 7 componentes y para qué sirve cada uno.</li>
@@ -439,7 +442,7 @@ p{margin:0 0 1em}
     <div class="module__tier"><span class="dot"></span>Tier 0 · Fundamentos · Módulo 01</div>
     <h2>El sustrato técnico invisible</h2>
     <p class="module__lead">Framerate, obturación 180°, exposición, aspect ratio y profundidad de campo: los parámetros que definen el "look" ANTES del encuadre, la luz o el color. En un flujo con IA no se capturan con una cámara — se invocan por prompt o se fuerzan en post.</p>
-    <div class="objectives"><h4>Al terminar este módulo vas a poder</h4><ul>
+    <div class="objectives"><h3 class="h4">Al terminar este módulo vas a poder</h3><ul>
       <li>Explicar por qué 24fps + obturador 180° producen "look cine" y qué pasa cuando los tocas mal.</li>
       <li>Balancear la exposición en stops y controlar profundidad de campo y bokeh como palancas independientes.</li>
       <li>Elegir el aspect ratio como decisión narrativa, no como contenedor del dispositivo.</li>
@@ -634,13 +637,13 @@ p{margin:0 0 1em}
 
     <div class="ours"><div class="ours__i">🏠</div><div class="ours__b"><b>En el sistema de creación y edición de videos de Tomi.</b> Porque el aspecto de entrega es fijo, el cuadro de 9:16 se divide en zonas: los captions viven en la banda baja (caption-wrap ~Y62%), la loading bar en su franja (~Y48%) y el name-label arriba (~Y11.5%). Todo esto lo verifica <code>audit-ui-safe-zones.py</code> antes del render (Hard Rule #4), leyendo las bandas empíricas — nunca hardcodeando la Y. Compón la imagen dejando esas zonas despejadas desde la anchor.</div></div>
 
-    <div class="dodont"><div class="dodont__c do"><h5>✅ Haz</h5><ul>
+    <div class="dodont"><div class="dodont__c do"><h4 class="h5">✅ Haz</h4><ul>
       <li>Fija el obturador a 180° y balancea la exposición con apertura/ISO/ND.</li>
       <li>Pide el look en lenguaje ("24fps", "180-degree motion blur", "no soap-opera smoothness") y corrige el framerate en conform.</li>
       <li>Nombra focal + T-stop + calidad de bokeh en la anchor, no solo "fondo borroso".</li>
       <li>Genera directo en el aspect ratio de destino (9:16 para Reels) con las safe zones despejadas.</li>
       <li>Recalcula la regla 180° al framerate de captura cuando hagas slow-mo (120fps → 1/240s).</li>
-    </ul></div><div class="dodont__c dont"><h5>❌ Evita</h5><ul>
+    </ul></div><div class="dodont__c dont"><h4 class="h5">❌ Evita</h4><ul>
       <li>Mover el shutter para exponer: mata el motion blur y ensucia el look.</li>
       <li>Asumir que "más fps = mejor": 48/60fps en narrativa = soap opera effect.</li>
       <li>Confundir cantidad de desenfoque (DOF) con calidad del desenfoque (bokeh).</li>
@@ -666,7 +669,7 @@ p{margin:0 0 1em}
     <h2>La cadena de IA y la anatomía del prompt</h2>
     <p class="module__lead">Este es el módulo-columna. Acá viven las herramientas que ejecutan todo lo que enseñan los demás módulos: los modelos de imagen y video, el prompt cinematográfico de 5 bloques, el control de cámara y la consistencia de personaje. Es el "cómo" transversal — la mano que aprieta el gatillo de cada decisión creativa.</p>
     <div class="objectives">
-      <h4>Al terminar este módulo vas a poder</h4>
+      <h3 class="h4">Al terminar este módulo vas a poder</h3>
       <ul>
         <li>Escribir un prompt de 5 bloques con oraciones atómicas, focal + apertura y luz motivada — no una descripción corrida.</li>
         <li>Elegir el modelo de video correcto según su duración real, si trae audio nativo y qué tipo de control ofrece.</li>
@@ -825,14 +828,14 @@ negative_prompt: talking, lips moving, fast head turn, warping hands</pre></div>
       <div class="ours__b"><b>En el sistema de creación y edición de videos de Tomi.</b> El generador de imágenes es <code>image.py</code>: usa el SDK google-genai con <code>model="gemini-3.1-flash-image-preview"</code>, declara <code>response_modalities=["TEXT","IMAGE"]</code> y pasa aspecto/tamaño vía <code>types.ImageConfig</code> (<code>--size</code> {512,1K,2K,4K} default 1K, <code>--aspect</code> default 9:16). Las referencias van con <code>--ref</code> (repetible para multi-personaje): se ensamblan como <code>[ref_1, …, prompt]</code> — refs primero, prompt al final. Ojo: el <code>HORROR_SUFFIX</code> no se aplica por default (el script es agnóstico); para paletas cool/clínicas se usa <code>--no-mono-suffix</code> + bloque de estilo propio.</div></div>
 
     <div class="dodont">
-      <div class="dodont__c do"><h5>✅ Haz</h5><ul>
+      <div class="dodont__c do"><h4 class="h5">✅ Haz</h4><ul>
         <li>Genera el frame primero (Gemini/MJ) y anímalo i2v — nunca t2v a ciegas.</li>
         <li>Escribe el prompt en oraciones atómicas y empareja focal + apertura.</li>
         <li>Usa un anchor frontal 1024×1024, luz pareja, expresión neutra, generado primero.</li>
         <li>Calcula la narración a 165 WPM contra la duración REAL del clip antes de generar.</li>
         <li>Consulta si el modelo trae audio nativo ANTES de diseñar el post.</li>
       </ul></div>
-      <div class="dodont__c dont"><h5>❌ Evita</h5><ul>
+      <div class="dodont__c dont"><h4 class="h5">❌ Evita</h4><ul>
         <li>Pedir "un video de X" en t2v y esperar composición controlada.</li>
         <li>Prefijos-etiqueta (<code>POV:</code>, <code>ANGLE:</code>) en prompts de Gemini → texto quemado.</li>
         <li>Copiar recetas con <code>--cref</code> en Midjourney v7 (ignorado en silencio).</li>
@@ -858,7 +861,7 @@ negative_prompt: talking, lips moving, fast head turn, warping hands</pre></div>
     <h2>Composición y encuadre</h2>
     <p class="module__lead">Dónde poner al sujeto en el cuadro y por qué: tercios, phi, aire de mirada, dónde NO cortar el cuerpo, y cómo cambia todo según el aspect ratio.</p>
     <div class="objectives">
-      <h4>Al terminar este módulo vas a poder</h4>
+      <h3 class="h4">Al terminar este módulo vas a poder</h3>
       <ul>
         <li>Colocar los ojos de un sujeto sobre la línea de tercios (o phi) y resolver el headroom por reflejo, no por tanteo.</li>
         <li>Dejar el aire de mirada del lado correcto y reconocer al instante un encuadre "apretado" o amputado por un corte de cuerpo mal puesto.</li>
@@ -958,13 +961,13 @@ negative_prompt: talking, lips moving, fast head turn, warping hands</pre></div>
     </div>
 
     <div class="dodont">
-      <div class="dodont__c do"><h5>✅ Haz</h5><ul>
+      <div class="dodont__c do"><h4 class="h5">✅ Haz</h4><ul>
         <li>Ancla los ojos en el tercio superior y deja que el headroom salga solo.</li>
         <li>Deja el aire del lado hacia donde mira o avanza el sujeto.</li>
         <li>Corta el cuerpo entre articulaciones (medio muslo, torso, medio brazo).</li>
         <li>Rediseña la composición para cada aspect ratio, no la recortes.</li>
       </ul></div>
-      <div class="dodont__c dont"><h5>❌ Evita</h5><ul>
+      <div class="dodont__c dont"><h4 class="h5">❌ Evita</h4><ul>
         <li>Demasiado headroom con el sujeto hundido y aire muerto arriba.</li>
         <li>La cara pegada al borde hacia donde mira (aire detrás).</li>
         <li>Cortar sobre tobillos, rodillas, muñecas o cuello (amputación).</li>
@@ -1103,7 +1106,7 @@ negative_prompt: talking, lips moving, fast head turn, warping hands</pre></div>
     <h2>Planos, ángulos y movimiento de cámara</h2>
     <p class="module__lead">El vocabulario de la cámara: tamaños de plano, ángulos, movimientos y distancias focales — cada uno con su efecto psicológico — y las reglas (180°, 30°) que evitan que un corte desoriente. Cuando lo generas con IA, este es el idioma exacto que los modelos entienden: "extreme wide shot", "85mm", "low angle", "dolly in, not zoom".</p>
     <div class="objectives">
-      <h4>Al terminar este módulo vas a poder</h4>
+      <h3 class="h4">Al terminar este módulo vas a poder</h3>
       <ul>
         <li>Elegir el tamaño de plano y el ángulo correctos para la emoción que buscas — y encuadrar el cuerpo sin "amputarlo".</li>
         <li>Distinguir dolly de zoom, y focal larga de gran angular, para escribir prompts que produzcan la perspectiva que quieres.</li>
@@ -1397,7 +1400,7 @@ negative_prompt: talking, lips moving, fast head turn, warping hands</pre></div>
 
     <div class="dodont">
       <div class="dodont__c do">
-        <h5>✅ Haz</h5>
+        <h4 class="h5">✅ Haz</h4>
         <ul>
           <li>Abrir con un establishing (LS) y acercarte al CU en los picos emocionales.</li>
           <li>Cortar el cuadro en el medio del hueso; poner los ojos en el tercio superior.</li>
@@ -1408,7 +1411,7 @@ negative_prompt: talking, lips moving, fast head turn, warping hands</pre></div>
         </ul>
       </div>
       <div class="dodont__c dont">
-        <h5>❌ Evita</h5>
+        <h4 class="h5">❌ Evita</h4>
         <ul>
           <li>Cortar el borde inferior en una articulación (tobillo, rodilla, cintura, codo, muñeca, cuello).</li>
           <li>Centrar la cabeza dejando mucho aire arriba.</li>
@@ -1438,7 +1441,7 @@ negative_prompt: talking, lips moving, fast head turn, warping hands</pre></div>
     <div class="module__tier"><span class="dot"></span>Tier 1 · Lenguaje visual · Módulo 05</div>
     <h2>Iluminación</h2>
     <p class="module__lead">Esculpir con luz: el esquema de 3 puntos, los ratios de contraste medidos en stops, la calidad dura o suave según el tamaño de la fuente, los patrones clásicos de retrato y la motivación que hace creíble cada haz. Iluminar no es "poder ver" — es decidir qué se revela, qué se esconde y de dónde parece venir la luz en la historia.</p>
-    <div class="objectives"><h4>Al terminar este módulo vas a poder</h4>
+    <div class="objectives"><h3 class="h4">Al terminar este módulo vas a poder</h3>
       <ul>
         <li>Armar y dosificar un esquema de 3 puntos (key / fill / back) y modular el mood cambiando la relación entre ellos, no su existencia.</li>
         <li>Leer y pedir un contraste concreto en ratios (2:1, 4:1, 8:1) y traducirlo a stops medibles.</li>
@@ -1626,14 +1629,14 @@ negative_prompt: talking, lips moving, fast head turn, warping hands</pre></div>
     <div class="ours"><div class="ours__i">🏠</div><div class="ours__b"><b>En el sistema de creación y edición de videos de Tomi.</b> La intención de iluminación (patrón, ratio, temperatura de la key, fuente motivada) se declara en el <code>creative-spec</code> por shot y se ejecuta con los prompts de imagen y de animación; el look de temperatura cálido/frío se termina en el grade según <code>COLOR-GRADING.md</code> (LUT cálido para narrativa vs frío/cinematográfico para las decisiones). Cuando animes, arranca siempre del mismo still ya iluminado y pídele al modelo <code>no relighting</code> para no romper la continuidad de luz entre clips.</div></div>
 
     <div class="dodont">
-      <div class="dodont__c do"><h5>✅ Haz</h5><ul>
+      <div class="dodont__c do"><h4 class="h5">✅ Haz</h4><ul>
         <li>Piensa en la <b>relación</b> entre key/fill/back antes que en agregar luces; el fill es la perilla del mood.</li>
         <li>Pide y mide el contraste en ratios sobre stops (2:1, 4:1, 8:1), no "a ojo".</li>
         <li>Acerca la fuente para suavizar — y aprovecha que también oscurece el fondo.</li>
         <li>Motiva cada luz por una fuente del plano y verifica el catchlight (posición y forma) en cada toma.</li>
         <li>Usa CRI ≥90 para piel; mezcla temperaturas a propósito, no por accidente.</li>
       </ul></div>
-      <div class="dodont__c dont"><h5>❌ Evita</h5><ul>
+      <div class="dodont__c dont"><h4 class="h5">❌ Evita</h4><ul>
         <li>Creer que "softbox = suave" sin mirar la distancia (tamaño aparente = físico ÷ distancia).</li>
         <li>Decir "1:1" cuando igualas key y fill: la convención ASC lo llama 2:1.</li>
         <li>Sumar otra luz cuando "se ve plano" — prueba primero negative fill (un negro).</li>
@@ -1659,7 +1662,7 @@ negative_prompt: talking, lips moving, fast head turn, warping hands</pre></div>
     <div class="module__tier"><span class="dot"></span>Tier 1 · Lenguaje visual · Módulo 06</div>
     <h2>Color: teoría, grading y LUTs</h2>
     <p class="module__lead">Del color como dato al color como emoción. La temperatura en Kelvin, los espacios de color, los scopes que reemplazan a tu ojo, la línea de tono de piel, los LUTs y la coherencia de paleta: el oficio que separa un plano que "se ve lindo" de una escena que se siente cinematográfica.</p>
-    <div class="objectives"><h4>Al terminar este módulo vas a poder</h4><ul>
+    <div class="objectives"><h3 class="h4">Al terminar este módulo vas a poder</h3><ul>
       <li>Separar corrección técnica de grading creativo y ejecutarlos en el orden correcto (normalizar → igualar → estilizar).</li>
       <li>Leer waveform, RGB parade y vectorscope para juzgar exposición, dominantes y tono de piel con datos, no con el ojo.</li>
       <li>Elegir y aplicar LUTs con criterio: entender log vs Rec.709, espacios de color, tamaños de .cube y el sistema de paleta dual de nuestro pipeline.</li>
@@ -1820,13 +1823,13 @@ negative_prompt: talking, lips moving, fast head turn, warping hands</pre></div>
 
     <div class="ours"><div class="ours__i">🏠</div><div class="ours__b"><b>En el sistema de creación y edición de videos de Tomi.</b> Los LUTs físicos <code>.cube</code> viven en <code>filters/</code> a tamaño <b>33³</b>: <code>wildebeast.cube</code> (warm alto-contraste, dirección LUT_NARRATIVE, verificado sobre footage real en <code>ultimo-tren final-v2</code>) y <code>gazelle.cube</code> (luminoso/aireado para UGC). Ojo: <code>gazelle</code> solo NO satura (SATAVG 16.5) — para colores vivos se combina con <code>vibrance</code>: <code>lut3d=filters/luts/gazelle.cube,vibrance=intensity=0.30</code> midió SATAVG 22.8 (+37%) en German CF-03. Se aplica <b>per clip</b> en Layer 1, antes del caption burn, y con intensidad parcial 0.6-0.8 si el clip lo pide. Ambos <code>.cube</code> tienen <code>canonical_validation_status: pending</code> — carácter verificado sobre footage real, pero aún NO medido contra referentes (HR#19 "NEVER ESTIMATE, ALWAYS MEASURE").</div></div>
 
-    <div class="dodont"><div class="dodont__c do"><h5>✅ Haz</h5><ul>
+    <div class="dodont"><div class="dodont__c do"><h4 class="h5">✅ Haz</h4><ul>
       <li>Normaliza (log→709) e iguala todos los planos de la escena a un hero shot ANTES de tocar el look.</li>
       <li>Verifica exposición con waveform, dominantes con RGB parade y piel con la línea de 123° del vectorscope.</li>
       <li>Aplica el LUT sobre el espacio de entrada que el LUT espera; usa 33³ para looks y 65³ para transforms técnicos.</li>
       <li>Aísla la piel con un secondary antes de empujar sombras a teal; respeta la luminancia real de la piel oscura.</li>
       <li>Mantén vignette + crushed blacks + alto contraste (universales, 7/7 referentes de nuestro pipeline).</li>
-    </ul></div><div class="dodont__c dont"><h5>❌ Evita</h5><ul>
+    </ul></div><div class="dodont__c dont"><h4 class="h5">❌ Evita</h4><ul>
       <li>Tirar un LUT creativo primero, sobre material desbalanceado — amplifica los defectos de base.</li>
       <li>Corregir "a ojo" en un monitor sin calibrar: sin D65 + gamma 2.4 estás arreglando tu pantalla, no la imagen.</li>
       <li>Forzar toda piel a 70 IRE: aplasta y blanquea la piel oscura (error técnico y ético).</li>
@@ -1851,7 +1854,7 @@ negative_prompt: talking, lips moving, fast head turn, warping hands</pre></div>
     <div class="module__tier"><span class="dot"></span>Tier 1 · Lenguaje visual · Módulo 07</div>
     <h2>Mise-en-scène, dirección de arte y continuidad</h2>
     <p class="module__lead">Lo que puebla el cuadro como decisión de significado — props, vestuario, textura, materiales — más la continuidad del estado físico del mundo a través de los cortes, y el valle inquietante del rostro IA. Es el eje de consistencia que los modelos tratan al azar: aquí no manda el número, manda el criterio, y este módulo enseña dónde exactamente la IA lo rompe.</p>
-    <div class="objectives"><h4>Al terminar este módulo vas a poder</h4><ul>
+    <div class="objectives"><h3 class="h4">Al terminar este módulo vas a poder</h3><ul>
       <li>Leer el cuadro entero como lenguaje: decidir props, vestuario, textura, materiales y coherencia de época como elecciones de significado, no como decorado neutro.</li>
       <li>Sostener la continuidad del estado físico del mundo a través de los cortes (posición de props, nivel de un vaso, vela que se consume, dirección de luz, wardrobe) — el trabajo del script-supervisor — y entender por qué la IA lo rompe.</li>
       <li>Diagnosticar y mitigar el valle inquietante del rostro IA (ojos muertos, cadencia de parpadeo, eyeline, lip-sync) y aplicar un gate de seguridad fotosensible a cualquier flash antes de publicar.</li>
@@ -1964,13 +1967,13 @@ negative_prompt: talking, lips moving, fast head turn, warping hands</pre></div>
 
     <div class="ours"><div class="ours__i">🏠</div><div class="ours__b"><b>En el sistema de creación y edición de videos de Tomi.</b> El horror-choice usa <b>white-flash</b> a data-volume 0.55-0.65 + camera-shake. Ojo: la hard rule de mix (HR#9) gobierna el <b>volumen de audio</b> del flash, NO su seguridad fotosensible — hoy no hay un gate de flash-rate en el pipeline. Hasta que exista, es responsabilidad del que renderiza contar los flashes del clip a mano y mantenerlos en ≤3/s. Y como todo el material es 100% IA y varios proyectos (German, Caro, Mamá Sin Caos) se publican como ads comerciales, aplica también el etiquetado de medios sintéticos: activar el toggle "altered or synthetic content" y respetar las reglas de divulgación de cada plataforma (Meta/TikTok/YouTube + EU AI Act Art. 50) antes de publicar.</div></div>
 
-    <div class="dodont"><div class="dodont__c do"><h5>✅ Haz</h5><ul>
+    <div class="dodont"><div class="dodont__c do"><h4 class="h5">✅ Haz</h4><ul>
       <li>Decide el mundo una vez — props, wardrobe, materiales, época — y propágalo como imagen de referencia clip a clip.</li>
       <li>Declara el estado físico y la screen direction en cada prompt ("half-full glass", "light from screen-left", "looking camera-left").</li>
       <li>Usa keyframing end-frame→start-frame para forzar continuidad; tapa los mismatches inevitables con cutaways/insertos.</li>
       <li>Dirige el rostro como a un actor: eyeline concreto, micro-expresión, catchlight, textura de piel real; verifica los ojos a velocidad real.</li>
       <li>Cuenta los flashes (≤3/s) y activa el etiquetado de contenido IA antes de publicar.</li>
-    </ul></div><div class="dodont__c dont"><h5>❌ Evita</h5><ul>
+    </ul></div><div class="dodont__c dont"><h4 class="h5">❌ Evita</h4><ul>
       <li>Prompta solo el sujeto y dejar que el modelo invente el resto del cuadro distinto en cada clip.</li>
       <li>Juzgar la continuidad o el rostro en un frame congelado — la deriva de estado y el parpadeo/lip-sync son problemas temporales.</li>
       <li>Confiar en que "seguro quedó igual": el pipeline genera cada clip aislado, la deriva es la regla.</li>
@@ -1995,7 +1998,7 @@ negative_prompt: talking, lips moving, fast head turn, warping hands</pre></div>
     <div class="module__tier"><span class="dot"></span>Tier 2 · Contar en el tiempo · Módulo 08</div>
     <h2>Storytelling, hooks y retención</h2>
     <p class="module__lead">Estructura, gancho y retención: cómo se sostiene la atención en los primeros 3 segundos y a lo largo de la pieza, y por qué el algoritmo reescribe el pacing clásico. Del esqueleto dramático de Aristóteles al corte cada 1.2 segundos que exige el feed — dos regímenes de ritmo que hay que saber elegir.</p>
-    <div class="objectives"><h4>Al terminar este módulo vas a poder</h4><ul>
+    <div class="objectives"><h3 class="h4">Al terminar este módulo vas a poder</h3><ul>
       <li>Estructurar una pieza con un modelo (3 actos, Story Circle o but/therefore) y auditar si tu guion tiene motor causal o es una lista de eventos.</li>
       <li>Construir un hook que gane al espectador en menos de 3 segundos usando sus tres capas (frame 0, primeras palabras, primer SFX).</li>
       <li>Elegir el régimen de pacing correcto según el destino — ritmo narrativo clásico vs retención algorítmica — y leer las métricas de retención para diagnosticar qué falló.</li>
@@ -2141,13 +2144,13 @@ Keep narration at 0.7-0.9 words/sec so the visuals breathe. Mark where the loop 
 
     <div class="ours"><div class="ours__i">🏠</div><div class="ours__b"><b>En el sistema de creación y edición de videos de Tomi.</b> Toda narración — humana o TTS — lleva <b>caption Whisper-sincronizado desde el primer frame audible</b> (~0.1s), sin excepciones: entre el 60–75% de IG/TikTok se mira en silencio. El caption chunkea TODA la narración del clip en cues progresivos word-timed (típico intro: 3 frases), nunca un bloque estático que se trunca a la primera frase. Y la simplicidad narrativa es regla: 1 frase de setup + 1 frase de decisión por evento, presente de indicativo en las consecuencias, staccato ("Choca. Caes.") solo en el pico del clímax. Detalle en <code>ai-video-production/CAPTIONS.md</code> y <code>RETENTION-RULES.md § Narrative simplicity</code>.</div></div>
 
-    <div class="dodont"><div class="dodont__c do"><h5>✅ Haz</h5><ul>
+    <div class="dodont"><div class="dodont__c do"><h4 class="h5">✅ Haz</h4><ul>
       <li>Arranca <i>in medias res</i>: frame 0 de máxima tensión, promesa en las primeras palabras y SFX de impacto en el ms 0 — las tres capas del hook en &lt;1.5s.</li>
       <li>Audita el guion con but/therefore línea por línea; si solo cabe "y luego", falta motor causal.</li>
       <li>Elige el régimen de pacing por el destino: cadencia 1.2–1.8s en el opener de un reel; 4–6s en un VSL o documental.</li>
       <li>Planta el open loop en el segundo 2 y págalo antes del final, con una brecha cerrable y valiosa.</li>
       <li>Deja respirar la imagen: 0.7–0.9 palabras/seg; el silencio carga peso.</li>
-    </ul></div><div class="dodont__c dont"><h5>❌ Evita</h5><ul>
+    </ul></div><div class="dodont__c dont"><h4 class="h5">❌ Evita</h4><ul>
       <li>Abrir con contexto o logo ("hola, hoy les voy a hablar de…") — pierde la mitad en el segundo 2.</li>
       <li>Tratar el hook como solo el guion e ignorar frame 0 y primer SFX.</li>
       <li>Aplicar cadencia de acción a todo por igual, o dejar bloques &gt;5s sin ningún cambio.</li>
@@ -2173,7 +2176,7 @@ Keep narration at 0.7-0.9 words/sec so the visuals breathe. Mark where the loop 
     <h2>Transiciones y ritmo de edición</h2>
     <p class="module__lead">El corte es gramática: cada tipo de corte y cada transición significan algo fijo, sus duraciones se miden en frames enteros (no existe el medio frame), se sincronizan con la música al frame más cercano al beat, y las reglas de continuidad (180°, 30°) no viven en el plano sino EN EL CORTE — por eso solo aparecen al ensamblar. En un pipeline con IA, donde cada clip nace aislado, esto es doblemente traicionero: hay que declarar la gramática antes de generar.</p>
     <div class="objectives">
-      <h4>Al terminar este módulo vas a poder</h4>
+      <h3 class="h4">Al terminar este módulo vas a poder</h3>
       <ul>
         <li>Calibrar la duración de cualquier corte o transición en conteo de frames, no en números "que suenan rápido".</li>
         <li>Esconder un corte con match-on-action y evitar los saltos de eje (180°) y de ángulo (30°) al ensamblar clips generados por separado.</li>
@@ -2417,7 +2420,7 @@ ffmpeg -i in.mp4 \
 
     <div class="dodont">
       <div class="dodont__c do">
-        <h5>✅ Haz</h5>
+        <h4 class="h5">✅ Haz</h4>
         <ul>
           <li>Calibra todo impacto/whip/flash en conteo entero de frames (conoce tu fps): 1 frame ≈ 42ms @24; ≥3 frames para que registre.</li>
           <li>Declara la screen direction (mira-izquierda/derecha) de cada clip ANTES de generarlo, y verifica el eje al ensamblar.</li>
@@ -2427,7 +2430,7 @@ ffmpeg -i in.mp4 \
         </ul>
       </div>
       <div class="dodont__c dont">
-        <h5>❌ Evita</h5>
+        <h4 class="h5">❌ Evita</h4>
         <ul>
           <li>Poner duraciones "que suenan rápido" (0.1s, 0.2s) sin traducirlas a frames: caes en la zona lenta y visible.</li>
           <li>Revisar los clips uno por uno y creer que el ensamblado va a estar bien — el salto de eje y el jump cut solo aparecen JUNTOS.</li>
@@ -2457,7 +2460,7 @@ ffmpeg -i in.mp4 \
     <div class="module__tier"><span class="dot"></span>Tier 2 · Contar en el tiempo · Módulo 10</div>
     <h2>Sonido y música</h2>
     <p class="module__lead">Las cuatro capas del sonido, la mezcla por niveles, el loudness por plataforma (LUFS) y la sincronía: por qué el audio decide la percepción de calidad. Y el nudo que confunde a todos — los niveles de fader por capa (voz −5 / SFX −10 / música −16) son BALANCE relativo en el timeline; el −14 LUFS integrado es la ENTREGA final. Viven en etapas distintas y no se contradicen.</p>
-    <div class="objectives"><h4>Al terminar este módulo vas a poder</h4><ul>
+    <div class="objectives"><h3 class="h4">Al terminar este módulo vas a poder</h3><ul>
       <li>Separar la banda sonora en las 4 capas profesionales (diálogo / música / SFX / ambiente) y balancearlas con jerarquía perceptual.</li>
       <li>Distinguir el balance relativo de faders del loudness integrado de entrega, y masterizar a −14 LUFS / −1 dBTP con ffmpeg loudnorm 2-pass.</li>
       <li>Aplicar la cadena de voz (HPF → corte de lodo → presencia → de-ess), el ducking correcto según el rol de la música, y el room tone que pega los cortes.</li>
@@ -2641,7 +2644,7 @@ ffmpeg -i mix.wav -af loudnorm=I=-14:TP=-1:LRA=11:measured_I=&lt;val&gt;:measure
       </div></div>
 
     <div class="dodont">
-      <div class="dodont__c do"><h5>✅ Haz</h5><ul>
+      <div class="dodont__c do"><h4 class="h5">✅ Haz</h4><ul>
         <li>Separa siempre en 4 stems (diálogo / música / SFX / ambiente) y balancea con la voz al frente.</li>
         <li>Mide el loudness integrado con un medidor (loudnorm 2-pass), no mires solo el peak meter.</li>
         <li>Pon el techo del limiter en −1 dBTP (true peak), nunca en 0 ni −0.1.</li>
@@ -2649,7 +2652,7 @@ ffmpeg -i mix.wav -af loudnorm=I=-14:TP=-1:LRA=11:measured_I=&lt;val&gt;:measure
         <li>Duckea según el rol de la música: 6–12 dB para cama VO, 1–4 dB para score dramático.</li>
         <li>Elige el target de LUFS por destino: −14 social/streaming, −16 Apple, −23 broadcast.</li>
       </ul></div>
-      <div class="dodont__c dont"><h5>❌ Evita</h5><ul>
+      <div class="dodont__c dont"><h4 class="h5">❌ Evita</h4><ul>
         <li>Aplanar todo en una sola pista: pierdes el rebalanceo, el ducking y el M&amp;E para doblaje.</li>
         <li>Subir el fader hasta "casi rojo" creyendo que maximiza — la plataforma lo normaliza igual.</li>
         <li>Dejar las pausas en silencio digital (−∞): se oyen como huecos.</li>
@@ -2677,7 +2680,7 @@ ffmpeg -i mix.wav -af loudnorm=I=-14:TP=-1:LRA=11:measured_I=&lt;val&gt;:measure
     <div class="module__tier"><span class="dot"></span>Tier 2 · Contar en el tiempo · Módulo 11</div>
     <h2>Subtítulos y captions</h2>
     <p class="module__lead">El oficio invisible del subtítulo: la velocidad de lectura en CPS, el timing con piso y techo, dónde se corta la línea, la posición dentro del safe area, el estilo legible sobre cualquier fondo y los captions kinéticos — todo bajo estándares broadcast/OTT (Netflix, BBC, EBU). Y el eje que el amateur ignora: la accesibilidad, donde subtítulo, CC y SDH son tres entregables distintos.</p>
-    <div class="objectives"><h4>Al terminar este módulo vas a poder</h4><ul>
+    <div class="objectives"><h3 class="h4">Al terminar este módulo vas a poder</h3><ul>
       <li>Medir el CPS de cada cue y rechazar los ilegibles, respetando los pisos y techos de duración (five-sixths de segundo a 7 segundos) en vez de "pegar la transcripción y ver que entre".</li>
       <li>Cortar líneas en el nodo sintáctico correcto, posicionar el caption dentro del safe area sin que la UI de la plataforma lo tape, y garantizar contraste sobre fondos difíciles.</li>
       <li>Producir con IA el flujo completo — transcripción, validación de CPS, burn-in con estilo profesional y captions kinéticos word-by-word — sabiendo dónde Whisper y ffmpeg lo rompen y cómo detectarlo.</li>
@@ -2842,13 +2845,13 @@ python -c "import pysrt; s=pysrt.open('captions/narracion.srt'); [print(i+1, rou
 
     <div class="ours"><div class="ours__i">🏠</div><div class="ours__b"><b>En el sistema de creación y edición de videos de Tomi.</b> Dos reglas duras cierran el círculo: <b>Whisper corre sobre el audio POST atempo 2x, nunca sobre el raw TTS</b> (los timestamps del raw quedan en velocidad 1x y se desincronizan), con <code>word_timestamps=True</code> y <code>language='es'</code>; y el caption <b>chunkea toda la narración del clip en cues progresivos word-timed</b> (típico intro: 3 frases), nunca un bloque estático que se trunca a la primera frase. Además el <code>-t</code> (offset del bloque en el timeline) es obligatorio, y hay que eliminar los <code>opacity:0</code> intermedios entre frases o aparecen gaps de 0.3–0.6s sin caption. Nunca hand-timing. En <code>ai-video-production/CAPTIONS.md</code> y <code>scripts/captions.py</code>.</div></div>
 
-    <div class="dodont"><div class="dodont__c do"><h5>✅ Haz</h5><ul>
+    <div class="dodont"><div class="dodont__c do"><h4 class="h5">✅ Haz</h4><ul>
       <li>Corre un contador de CPS sobre cada cue y rechaza los que pasan 17–20; alarga o parte en dos.</li>
       <li>Respeta los dos muros de duración: piso 5/6 de segundo, techo ~6–7s; y ≥2 frames de gap entre cues.</li>
       <li>Corta la línea en el nodo sintáctico (nunca artículo+sustantivo) y conforma el in/out al corte de plano.</li>
       <li>Posiciona en el safe area (90%/75%) y en 9:16 sube a ~Y62–66%; garantiza contraste con shadow suave + outline fino, o caja sobre fondo caótico.</li>
       <li>Para kinético usa WhisperX (±50 ms) sobre el audio ya acelerado, y elige SDH/CC cuando el pedido es accesibilidad.</li>
-    </ul></div><div class="dodont__c dont"><h5>❌ Evita</h5><ul>
+    </ul></div><div class="dodont__c dont"><h4 class="h5">❌ Evita</h4><ul>
       <li>Pegar la transcripción y darla por legible "porque entra en pantalla" sin medir CPS.</li>
       <li>Dejar un cue colgado 8–9s (se re-lee) o flashear uno por debajo de 5/6 de segundo.</li>
       <li>Engrosar el stroke hasta que "se vea": come la forma de la letra y baja la legibilidad.</li>
@@ -2873,7 +2876,7 @@ python -c "import pysrt; s=pysrt.open('captions/narracion.srt'); [print(i+1, rou
     <div class="module__tier"><span class="dot"></span>Tier 3 · Terminar y entregar · Módulo 12</div>
     <h2>VFX y postproducción / finishing</h2>
     <p class="module__lead">El orden sagrado del finishing, el color management, el chroma subsampling, el bit-depth y las specs de export: cómo se termina y entrega un video sin degradarlo. El amateur exporta un solo MP4 y lo trata como su archivo maestro; el profesional mantiene un master intocable y genera cada deliverable desde ahí. Este módulo es la disciplina de ese último tramo.</p>
-    <div class="objectives"><h4>Al terminar este módulo vas a poder</h4><ul>
+    <div class="objectives"><h3 class="h4">Al terminar este módulo vas a poder</h3><ul>
       <li>Ejecutar el pipeline de finishing en su orden irreversible (edit-lock → conform → color → mezcla → títulos/VFX → master → delivery) y entender por qué cambiar el orden multiplica el trabajo.</li>
       <li>Elegir codec, chroma subsampling y bit-depth correctos para cada etapa: masterizar alto (ProRes 4:2:2 10-bit) y bajar a 4:2:0 8-bit recién en el export final.</li>
       <li>Aplicar color en el orden correcto (transform técnico → balance → look) leyendo scopes en vez del monitor, y sumar film emulation (grain + halation) como último paso a resolución nativa.</li>
@@ -3067,7 +3070,7 @@ lut3d=file=creative_look.cube" -c:v prores_ks -profile:v 3 graded.mov</pre></div
     </div>
 
     <div class="dodont">
-      <div class="dodont__c do"><h5>✅ Haz</h5><ul>
+      <div class="dodont__c do"><h4 class="h5">✅ Haz</h4><ul>
         <li>Respeta el orden del pipeline: edit-lock → conform → color → mezcla → títulos/VFX → master → delivery.</li>
         <li>Masteriza en ProRes intra-frame (4:2:2 10-bit) y saca cada deliverable desde ese master, una sola vez por plataforma.</li>
         <li>Colorea en 10-bit aunque entregues en 8-bit, y baja a 4:2:0 recién en el export final.</li>
@@ -3075,7 +3078,7 @@ lut3d=file=creative_look.cube" -c:v prores_ks -profile:v 3 graded.mov</pre></div
         <li>Balancea con scopes (RGB parade + vectorscope skin-tone line), no a ojo sobre el monitor.</li>
         <li>Aplica grain y halation al final, a resolución nativa, con mix sutil (grain 8–25%, halation ≤30%).</li>
       </ul></div>
-      <div class="dodont__c dont"><h5>❌ Evita</h5><ul>
+      <div class="dodont__c dont"><h4 class="h5">❌ Evita</h4><ul>
         <li>Tratar el MP4 de YouTube como tu archivo maestro y recomprimirlo para hacer la versión de IG.</li>
         <li>Tirar un "LUT cinematográfico" como primer y único paso sobre Log crudo o Rec.709 mal balanceado.</li>
         <li>Grabar/generar en 4:2:0 y después pretender un buen chroma key o un grade pesado.</li>
@@ -3103,7 +3106,7 @@ lut3d=file=creative_look.cube" -c:v prores_ks -profile:v 3 graded.mov</pre></div
     <div class="module__tier"><span class="dot"></span>Tier 3 · Terminar y entregar · Módulo 13</div>
     <h2>Entrega, seguridad y legal</h2>
     <p class="module__lead">El gate final. Specs por plataforma, seguridad fotosensible, etiquetado de contenido sintético, accesibilidad y derechos. Todo lo que impide que un video listo se caiga al publicarlo — o que te lo bajen, te lo silencien o te lo demanden después.</p>
-    <div class="objectives"><h4>Al terminar este módulo vas a poder</h4>
+    <div class="objectives"><h3 class="h4">Al terminar este módulo vas a poder</h3>
       <ul>
         <li>Exportar al spec correcto de cada plataforma (resolución, codec, bitrate, tamaño, loudness) sin adivinar.</li>
         <li>Correr un gate de seguridad fotosensible antes de publicar cualquier flash o strobe.</li>
@@ -3237,7 +3240,7 @@ lut3d=file=creative_look.cube" -c:v prores_ks -profile:v 3 graded.mov</pre></div
       <pre>Instrumental cinematic tension bed for a 60s vertical ad, 90 BPM, dark ambient pads with a soft pulse, no melody hooks that distract from voiceover, clean loop points, mixed to sit at -16 LUFS under narration. Original composition, no recognizable riffs.</pre></div>
 
     <div class="dodont">
-      <div class="dodont__c do"><h5>✅ Haz</h5>
+      <div class="dodont__c do"><h4 class="h5">✅ Haz</h4>
         <ul>
           <li>Cuenta los flashes cuadro por cuadro antes de publicar cualquier destello o strobe.</li>
           <li>Verifica el archivo final con <code>ffprobe</code> contra el spec exacto del formato (codec, fps, resolución, tamaño).</li>
@@ -3247,7 +3250,7 @@ lut3d=file=creative_look.cube" -c:v prores_ks -profile:v 3 graded.mov</pre></div
           <li>Usa música con sync + master license aclaradas (librería con scope o composición original).</li>
         </ul>
       </div>
-      <div class="dodont__c dont"><h5>❌ Evita</h5>
+      <div class="dodont__c dont"><h4 class="h5">❌ Evita</h4>
         <ul>
           <li>Pedirle "strobe / flashing lights" a un modelo y publicar lo que devuelva sin medir el flash-rate.</li>
           <li>Generar en 16:9 para recortar a 9:16 — pierdes sujeto y headroom.</li>
@@ -3277,7 +3280,7 @@ lut3d=file=creative_look.cube" -c:v prores_ks -profile:v 3 graded.mov</pre></div
     <div class="module__tier"><span class="dot"></span>Tier 4 · Integración · Módulo 14</div>
     <h2>Todo junto en el pipeline de producción con IA</h2>
     <p class="module__lead">Capstone. No hay estándares nuevos acá: hay un mapa. Cómo cada regla que aprendiste en el curso — encuadre, luz, sonido, color, ritmo — se materializa en un pipeline real por checkpoints, de los anchors al render, y cómo un doble gate de calidad decide si el video sale o vuelve a iterar.</p>
-    <div class="objectives"><h4>Al terminar este módulo vas a poder</h4><ul>
+    <div class="objectives"><h3 class="h4">Al terminar este módulo vas a poder</h3><ul>
       <li>Recorrer el pipeline completo por checkpoints (CP1 anchors → CP2 script → CP3 imágenes → CP4 animación → CP5 render) y saber qué estándar del curso vive en cada uno.</li>
       <li>Leer las reglas duras del sistema (mezcla, LUFS, cuts/min, safe zones, captions Whisper) como la manifestación operativa de los principios de cine, no como caprichos de configuración.</li>
       <li>Aplicar el doble gate de calidad — Gemini holístico ≥9.7 más audit-against-referent ≥85% de métricas críticas — y entender por qué ninguno de los dos alcanza solo.</li>
@@ -3414,13 +3417,13 @@ eyes blink once. No other motion. Photoreal, film grain, shallow depth of field.
 
     <div class="safebanner"><div class="safebanner__h">⚠️ Seguridad</div><p>El formato horror usa white-flash a volumen alto (0.55-0.65) más camera-shake, y pedirle "strobe" a un modelo de video puede producir secuencias inseguras sin aviso. El estándar de seguridad fotosensible (ITU-R BT.1702 / test de Harding): <b>máximo 3 flashes por segundo</b>, con regla especial para el rojo saturado. Un flash es una transición de luminancia ≥10 cd/m² sobre &gt;25% de la pantalla. Corre un chequeo de flash-rate antes de publicar: una secuencia insegura puede disparar convulsiones y genera responsabilidad legal directa.</p></div>
 
-    <div class="dodont"><div class="dodont__c do"><h5>✅ Haz</h5><ul>
+    <div class="dodont"><div class="dodont__c do"><h4 class="h5">✅ Haz</h4><ul>
       <li>Avanza CP por CP y valida cada checkpoint antes del siguiente — la animación es la fase cara, no la de arreglar.</li>
       <li>Consulta la MODEL-CAPABILITIES-MATRIX antes de escribir el guion: la narración debe caber en el clip_max del modelo.</li>
       <li>Extrae frames y mide (LUFS, cuts/min, WPM, cobertura) — no te fíes de un solo veredicto holístico.</li>
       <li>Exige los dos gates juntos: ≥9.7 de Gemini Y ≥85% contra referentes.</li>
       <li>Etiqueta el video como generado por IA en la plataforma y corre el chequeo de flash-rate si hay strobe.</li>
-    </ul></div><div class="dodont__c dont"><h5>❌ Evita</h5><ul>
+    </ul></div><div class="dodont__c dont"><h4 class="h5">❌ Evita</h4><ul>
       <li>Parar pre-animación con score bajo esperando que la IA lo rescate: agrega +0.1-0.2, no salva la base.</li>
       <li>Runs autónomos multi-CP: un solo run largo (&gt;15 min) esconde bugs sistemáticos.</li>
       <li>Variantes que solo cambian el framing del mismo plano — se sienten slideshow con motion.</li>
