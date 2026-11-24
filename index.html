@@ -331,7 +331,7 @@ p{margin:0 0 1em}
     </div>
     <div class="railprog"><span>Progreso</span><span id="progpct">0%</span></div>
     <div class="progbar"><span id="progbar-fill"></span></div>
-    <button class="railreset" id="railreset">↺ Reiniciar progreso</button>
+    <button type="button" class="railreset" id="railreset">↺ Reiniciar progreso</button>
     <nav id="nav">
       <div class="tiergroup"><div class="tiergroup__h">Tier 0 · Fundamentos</div>
         <a class="navlink" href="#m0"><span class="navlink__n">00</span> Cómo usar esta academia</a>
@@ -367,9 +367,9 @@ p{margin:0 0 1em}
   <!-- ============ MAIN ============ -->
   <div class="main">
     <div class="topbar">
-      <button class="navtoggle" id="navtoggle" aria-label="Menú">☰ Módulos</button>
+      <button type="button" class="navtoggle" id="navtoggle" aria-label="Menú">☰ Módulos</button>
       <span class="topbar__title" id="topbartitle">Academia de Cine &amp; Video con IA</span>
-      <button class="themetoggle" id="themetoggle" aria-label="Cambiar tema">◐ Tema</button>
+      <button type="button" class="themetoggle" id="themetoggle" aria-label="Cambiar tema">◐ Tema</button>
     </div>
 
     <div class="wrap">
@@ -518,7 +518,7 @@ p{margin:0 0 1em}
         <div class="ai__lens break"><b>⚠ Dónde la IA lo rompe (y cómo mitigarlo)</b> El fallo típico es el <b>look "videoso"</b>: el modelo entrega clips demasiado fluidos y nítidos (sin blur de obturador), que leen como telenovela o making-of. Se detecta mirando un movimiento rápido frame a frame — si cada frame está perfectamente congelado, falta el rastro 180°. Mitigación: fuerza 24fps en conform y suma motion blur leve en grado. Segundo fallo: framerate inconsistente entre clips generados en tandas distintas — normaliza TODOS al mismo fps antes de ensamblar.</div>
       </div></div>
 
-    <div class="prompt"><div class="prompt__bar"><span class="prompt__tool">Kling 2.5</span><span class="prompt__ill">ilustra: look 24fps + blur 180°</span><button class="prompt__copy">Copiar</button></div>
+    <div class="prompt"><div class="prompt__bar"><span class="prompt__tool">Kling 2.5</span><span class="prompt__ill">ilustra: look 24fps + blur 180°</span><button type="button" class="prompt__copy">Copiar</button></div>
       <pre>Cinematic 24fps film look, natural 180-degree shutter motion blur, medium shot of a woman turning her head, subtle handheld movement, shallow depth of field, Kodak Vision3 film grain, no soap-opera smoothness</pre></div>
 
     <div class="lesson">
@@ -572,7 +572,7 @@ p{margin:0 0 1em}
 
     <div class="uu"><div class="uu__h">💡 Lo que no sabías que no sabías</div><p>El discurso popular ("modo retrato", "fondo borroso") colapsa dos cosas distintas en un solo deseo. Puedes tener un fondo muy borroso pero <b>feo</b> (bokeh nervioso / anillo de cebolla) o un desenfoque moderado pero <b>cremoso</b>. Sin el vocabulario para pedir la CALIDAD del desenfoque — no solo la cantidad — nunca vas a saber por qué tu "fondo borroso" no se ve como el de la película.</p></div>
 
-    <div class="prompt"><div class="prompt__bar"><span class="prompt__tool">Midjourney v7</span><span class="prompt__ill">ilustra: bokeh cremoso · anchor</span><button class="prompt__copy">Copiar</button></div>
+    <div class="prompt"><div class="prompt__bar"><span class="prompt__tool">Midjourney v7</span><span class="prompt__ill">ilustra: bokeh cremoso · anchor</span><button type="button" class="prompt__copy">Copiar</button></div>
       <pre>85mm portrait lens at T1.5, extremely shallow depth of field, subject in sharp focus, background melted into creamy circular bokeh, soft out-of-focus highlight orbs, full-frame sensor look, cinematic --ar 9:16</pre></div>
 
     <div class="ai"><div class="ai__h">🤖 Hazlo con IA<span class="tag">triple lente</span></div>
@@ -725,7 +725,7 @@ p{margin:0 0 1em}
         <div class="stdnum__row"><span class="stdnum__k">Por qué</span><span>24mm = wide/contexto amplio · 35-50mm = natural/documental · 85mm = retrato íntimo con separación de fondo. Empareja SIEMPRE la focal con apertura: f/1.8 (bokeh fuerte), f/4 (medio), f/8 (casi todo en foco). Sin apertura, el desenfoque es aleatorio.</span></div>
         <div class="stdnum__src">Fuente: aiimagetovideo.pro Camera Lenses AI Prompt Guide + truefan.ai cinematic AI video prompts 2026. Principio óptico de cine traducido a prompt (el modelo lo aproxima, no simula física de lente).</div></div></div>
 
-    <div class="prompt"><div class="prompt__bar"><span class="prompt__tool">Gemini Nano Banana</span><span class="prompt__ill">ilustra: anchor POV 9:16, 2K</span><button class="prompt__copy">Copiar</button></div>
+    <div class="prompt"><div class="prompt__bar"><span class="prompt__tool">Gemini Nano Banana</span><span class="prompt__ill">ilustra: anchor POV 9:16, 2K</span><button type="button" class="prompt__copy">Copiar</button></div>
       <pre>POV shot, first person, my own hands gripping a rusted iron gate at dusk, abandoned stone courtyard beyond, warm amber key light from the left, deep shadows, shallow depth of field, 85mm lens look, cinematic film grain, vertical 9:16 framing</pre></div>
 
     <div class="lesson">
@@ -770,7 +770,7 @@ p{margin:0 0 1em}
     <div class="ours"><div class="ours__i">🏠</div>
       <div class="ours__b"><b>En el sistema de creación y edición de videos de Tomi.</b> El cheat-sheet de selección vive en <code>MODEL-BENCHMARK.md</code>: hook viral de los primeros 30s → Kling 2.5 Turbo Pro; motion narrativo ≥30s → Hailuo 02 (Std 768p budget / Pro 1080p hero); storyboard de imagen → Gemini Nano Banana. Y la regla de ajuste (HR#28/#29): <code>narración_dur = palabras/165×60 ≤ min(duration_intent, clip_max_s)</code> del modelo — se valida con <code>audit-spec-narration-fits-duration.py</code> antes de generar. Cada modelo declara sus límites en <code>MODEL-CAPABILITIES-MATRIX.md</code>; los tres roles del triángulo lo consultan antes de producir.</div></div>
 
-    <div class="prompt"><div class="prompt__bar"><span class="prompt__tool">Hailuo 02</span><span class="prompt__ill">ilustra: tokens de cámara simultáneos</span><button class="prompt__copy">Copiar</button></div>
+    <div class="prompt"><div class="prompt__bar"><span class="prompt__tool">Hailuo 02</span><span class="prompt__ill">ilustra: tokens de cámara simultáneos</span><button type="button" class="prompt__copy">Copiar</button></div>
       <pre>A lone figure stands at the end of a foggy corridor. [Dolly in, Pedestal up] The fluorescent tubes flicker overhead, cold blue light, 35mm lens, shallow depth of field.</pre></div>
 
     <div class="lesson">
@@ -790,7 +790,7 @@ p{margin:0 0 1em}
         <div class="ai__lens break"><b>⚠ Dónde la IA lo rompe (y cómo mitigarlo)</b> Encadenar clips sin frame compartido = salto de identidad/posición entre planos. Y la <b>duración nominal ≠ real</b>: pedir 5s da 5.04s, 6s da ~5.9s; esa deriva de 0.04-0.1s por clip se acumula y desincroniza narración y captions al final. Detección: revisa los empalmes; recalcula el timeline con las duraciones reales medidas, no con enteros. Mitigación: end/start frame compartido + sync contra <code>clip_real_s</code>.</div>
       </div></div>
 
-    <div class="prompt"><div class="prompt__bar"><span class="prompt__tool">Kling 2.5</span><span class="prompt__ill">ilustra: i2v start/end + push-in lento</span><button class="prompt__copy">Copiar</button></div>
+    <div class="prompt"><div class="prompt__bar"><span class="prompt__tool">Kling 2.5</span><span class="prompt__ill">ilustra: i2v start/end + push-in lento</span><button type="button" class="prompt__copy">Copiar</button></div>
       <pre>start_image: shot03_frameA.png   end_image: shot03_frameB.png
 Slow push-in toward the gate, ultra-slow motion (2-3s), the hands tighten their grip, dust drifting in the amber light, camera locked POV.
 negative_prompt: talking, lips moving, fast head turn, warping hands</pre></div>
@@ -946,7 +946,7 @@ negative_prompt: talking, lips moving, fast head turn, warping hands</pre></div>
     </div>
 
     <div class="prompt">
-      <div class="prompt__bar"><span class="prompt__tool">Midjourney v7</span><span class="prompt__ill">ilustra: tercios + lookroom + negative space</span><button class="prompt__copy">Copiar</button></div>
+      <div class="prompt__bar"><span class="prompt__tool">Midjourney v7</span><span class="prompt__ill">ilustra: tercios + lookroom + negative space</span><button type="button" class="prompt__copy">Copiar</button></div>
       <pre>Cinematic portrait of a weathered fisherman positioned on the LEFT third of the frame, head and eyes on the upper third line, gazing toward frame-right into open negative space, shallow depth of field 85mm f/1.4, soft window light from frame-right, rule-of-thirds composition, 2.39:1 aspect ratio --ar 21:9 --style raw</pre>
     </div>
 
@@ -990,7 +990,7 @@ negative_prompt: talking, lips moving, fast head turn, warping hands</pre></div>
     </div>
 
     <div class="prompt">
-      <div class="prompt__bar"><span class="prompt__tool">Gemini Nano Banana / Flux</span><span class="prompt__ill">ilustra: depth layering en 3 planos</span><button class="prompt__copy">Copiar</button></div>
+      <div class="prompt__bar"><span class="prompt__tool">Gemini Nano Banana / Flux</span><span class="prompt__ill">ilustra: depth layering en 3 planos</span><button type="button" class="prompt__copy">Copiar</button></div>
       <pre>Three-layer depth composition: FOREGROUND out-of-focus green leaves framing the left edge, MIDGROUND a young woman in red coat sharp on the right third looking frame-left, BACKGROUND a misty forest path receding to a vanishing point, telephoto compression 135mm, overcast diffused light, strong depth separation --ar 16:9</pre>
     </div>
 
@@ -1046,7 +1046,7 @@ negative_prompt: talking, lips moving, fast head turn, warping hands</pre></div>
     </div>
 
     <div class="prompt">
-      <div class="prompt__bar"><span class="prompt__tool">Veo 3 / Kling 2.5</span><span class="prompt__ill">ilustra: composición vertical 9:16 con aire para captions</span><button class="prompt__copy">Copiar</button></div>
+      <div class="prompt__bar"><span class="prompt__tool">Veo 3 / Kling 2.5</span><span class="prompt__ill">ilustra: composición vertical 9:16 con aire para captions</span><button type="button" class="prompt__copy">Copiar</button></div>
       <pre>Vertical 9:16 handheld shot, a chef centered on the vertical axis plating a dish on a counter in the lower third, steam rising through the upper two-thirds as negative space, top-down soft kitchen light, shallow focus, subject eyes on upper-third line, leave clean space top and bottom for on-screen text --ar 9:16</pre>
     </div>
 
@@ -1079,7 +1079,7 @@ negative_prompt: talking, lips moving, fast head turn, warping hands</pre></div>
     </div>
 
     <div class="prompt">
-      <div class="prompt__bar"><span class="prompt__tool">ffmpeg</span><span class="prompt__ill">ilustra: overlay de safe action 93% + safe title 90%</span><button class="prompt__copy">Copiar</button></div>
+      <div class="prompt__bar"><span class="prompt__tool">ffmpeg</span><span class="prompt__ill">ilustra: overlay de safe action 93% + safe title 90%</span><button type="button" class="prompt__copy">Copiar</button></div>
       <pre>ffmpeg -i in.mp4 -vf "drawbox=x=iw*0.035:y=ih*0.035:w=iw*0.93:h=ih*0.93:color=yellow@0.8:t=2,drawbox=x=iw*0.05:y=ih*0.05:w=iw*0.90:h=ih*0.90:color=red@0.8:t=2" -c:a copy safe_check.mp4</pre>
     </div>
 
@@ -1270,7 +1270,7 @@ negative_prompt: talking, lips moving, fast head turn, warping hands</pre></div>
     </div>
 
     <div class="prompt">
-      <div class="prompt__bar"><span class="prompt__tool">Kling 2.5</span><span class="prompt__ill">ilustra: CU + compresión 85mm</span><button class="prompt__copy">Copiar</button></div>
+      <div class="prompt__bar"><span class="prompt__tool">Kling 2.5</span><span class="prompt__ill">ilustra: CU + compresión 85mm</span><button type="button" class="prompt__copy">Copiar</button></div>
       <pre>Close-up, 85mm lens, shallow depth of field, a woman's face fills the frame as her expression shifts from hope to fear, softly compressed blurred background, eyes on upper third, subtle catchlight, no camera movement, cinematic</pre>
     </div>
 
@@ -1294,7 +1294,7 @@ negative_prompt: talking, lips moving, fast head turn, warping hands</pre></div>
     </div>
 
     <div class="prompt">
-      <div class="prompt__bar"><span class="prompt__tool">Veo 3.1</span><span class="prompt__ill">ilustra: push-in psicológico (dolly, no zoom)</span><button class="prompt__copy">Copiar</button></div>
+      <div class="prompt__bar"><span class="prompt__tool">Veo 3.1</span><span class="prompt__ill">ilustra: push-in psicológico (dolly, no zoom)</span><button type="button" class="prompt__copy">Copiar</button></div>
       <pre>Medium close-up, 50mm lens, slow subtle push-in — camera physically dollies closer to a man realizing a terrible truth, background parallax shifts as we approach, motivated psychological move, dolly not zoom, shallow focus, cinematic, 24fps</pre>
     </div>
 
@@ -1323,7 +1323,7 @@ negative_prompt: talking, lips moving, fast head turn, warping hands</pre></div>
     </div>
 
     <div class="prompt">
-      <div class="prompt__bar"><span class="prompt__tool">Runway Gen-4</span><span class="prompt__ill">ilustra: órbita + contrapicado</span><button class="prompt__copy">Copiar</button></div>
+      <div class="prompt__bar"><span class="prompt__tool">Runway Gen-4</span><span class="prompt__ill">ilustra: órbita + contrapicado</span><button type="button" class="prompt__copy">Copiar</button></div>
       <pre>Orbiting camera, circular dolly around subject, 35mm lens, a warrior standing still as the camera arcs 180 degrees around him, dust in the air, low angle looking up, dramatic side light, smooth gimbal motion, cinematic</pre>
     </div>
 
@@ -1598,7 +1598,7 @@ negative_prompt: talking, lips moving, fast head turn, warping hands</pre></div>
       </div>
     </div>
 
-    <div class="prompt"><div class="prompt__bar"><span class="prompt__tool">Midjourney v7</span><span class="prompt__ill">ilustra: Rembrandt key + rim, 4:1</span><button class="prompt__copy">Copiar</button></div>
+    <div class="prompt"><div class="prompt__bar"><span class="prompt__tool">Midjourney v7</span><span class="prompt__ill">ilustra: Rembrandt key + rim, 4:1</span><button type="button" class="prompt__copy">Copiar</button></div>
       <pre>Cinematic portrait of a 40yo man, Rembrandt lighting: soft key light from camera-left at 45 degrees and elevated 45 degrees creating a small triangle of light on the right cheek, subtle blue rim/backlight from behind separating him from a dark charcoal background, minimal fill (4:1 ratio, deep shadow on right side), warm 3200K key, catchlight at 10 o'clock in the eyes, 85mm lens look, shallow depth of field --ar 2:3 --style raw</pre></div>
 
     <div class="ai"><div class="ai__h">🤖 Hazlo con IA<span class="tag">triple lente</span></div>
@@ -1609,10 +1609,10 @@ negative_prompt: talking, lips moving, fast head turn, warping hands</pre></div>
       </div>
     </div>
 
-    <div class="prompt"><div class="prompt__bar"><span class="prompt__tool">Flux</span><span class="prompt__ill">ilustra: low-key noir, 8:1, motivado</span><button class="prompt__copy">Copiar</button></div>
+    <div class="prompt"><div class="prompt__bar"><span class="prompt__tool">Flux</span><span class="prompt__ill">ilustra: low-key noir, 8:1, motivado</span><button type="button" class="prompt__copy">Copiar</button></div>
       <pre>Film noir interior, single hard key light motivated by a desk lamp practical (warm 2900K) camera-right, 8:1 lighting ratio, deep unfilled black shadows on the left side of the face, hard-edged shadow of window blinds across the wall, cool 5600K moonlight spill from window in background, high contrast, 35mm anamorphic, volumetric haze --ar 16:9</pre></div>
 
-    <div class="prompt"><div class="prompt__bar"><span class="prompt__tool">Gemini Nano Banana</span><span class="prompt__ill">ilustra: butterfly / beauty, 2:1</span><button class="prompt__copy">Copiar</button></div>
+    <div class="prompt"><div class="prompt__bar"><span class="prompt__tool">Gemini Nano Banana</span><span class="prompt__ill">ilustra: butterfly / beauty, 2:1</span><button type="button" class="prompt__copy">Copiar</button></div>
       <pre>Beauty portrait, butterfly/Paramount lighting: large soft key directly in front and above the face pointing down at 45 degrees, symmetrical butterfly shadow under the nose, silver reflector fill below chin (clamshell), 2:1 low ratio, even bright high-key white seamless background, 5600K daylight, round catchlights at 12 o'clock, 100mm macro look --ar 4:5</pre></div>
 
     <div class="ai"><div class="ai__h">🤖 Hazlo con IA<span class="tag">triple lente</span></div>
@@ -1623,7 +1623,7 @@ negative_prompt: talking, lips moving, fast head turn, warping hands</pre></div>
       </div>
     </div>
 
-    <div class="prompt"><div class="prompt__bar"><span class="prompt__tool">Kling 2.5</span><span class="prompt__ill">ilustra: preservar la luz al animar</span><button class="prompt__copy">Copiar</button></div>
+    <div class="prompt"><div class="prompt__bar"><span class="prompt__tool">Kling 2.5</span><span class="prompt__ill">ilustra: preservar la luz al animar</span><button type="button" class="prompt__copy">Copiar</button></div>
       <pre>Subtle push-in on the subject, keep the low-key Rembrandt lighting and warm 3200K key from camera-left unchanged, flickering candle practical motivates soft warm light on the face, shadows stay deep and stable, no relighting, cinematic, 24fps motion --duration 5s</pre></div>
 
     <div class="ours"><div class="ours__i">🏠</div><div class="ours__b"><b>En el sistema de creación y edición de videos de Tomi.</b> La intención de iluminación (patrón, ratio, temperatura de la key, fuente motivada) se declara en el <code>creative-spec</code> por shot y se ejecuta con los prompts de imagen y de animación; el look de temperatura cálido/frío se termina en el grade según <code>COLOR-GRADING.md</code> (LUT cálido para narrativa vs frío/cinematográfico para las decisiones). Cuando animes, arranca siempre del mismo still ya iluminado y pídele al modelo <code>no relighting</code> para no romper la continuidad de luz entre clips.</div></div>
@@ -1775,10 +1775,10 @@ negative_prompt: talking, lips moving, fast head turn, warping hands</pre></div>
       <p>El <b>flag de rango</b> (full 0-255 vs legal 16-235) es metadata invisible: el amateur nunca lo ve, solo sufre el síntoma — el contraste cambia entre el timeline y el archivo exportado, o entre QuickTime, Chrome y la TV. Ese último caso también tiene otra causa gemela: el <b>mismatch de gamma</b> (2.2 vs 2.4) y la gestión de color por aplicación. El profesional fija gamma 2.4 en una sala oscura calibrada y hace coincidir el flag de rango en captura, timeline y export. Cuando "se ve distinto en cada lado", casi siempre es una de estas dos cosas, no tu grade.</p>
     </div>
 
-    <div class="prompt"><div class="prompt__bar"><span class="prompt__tool">Midjourney v7</span><span class="prompt__ill">ilustra: luz motivada por Kelvin</span><button class="prompt__copy">Copiar</button></div>
+    <div class="prompt"><div class="prompt__bar"><span class="prompt__tool">Midjourney v7</span><span class="prompt__ill">ilustra: luz motivada por Kelvin</span><button type="button" class="prompt__copy">Copiar</button></div>
       <pre>Interior noir office at night, single tungsten desk lamp at 3200K warm key light on subject's face, cool 5600K moonlight spilling through blinds onto the far wall, teal-orange complementary separation, skin tones warm and natural, deep shadows, 40mm lens, shallow depth of field --ar 16:9 --style raw</pre></div>
 
-    <div class="prompt"><div class="prompt__bar"><span class="prompt__tool">Kling 2.5</span><span class="prompt__ill">ilustra: golden hour ~3400K</span><button class="prompt__copy">Copiar</button></div>
+    <div class="prompt"><div class="prompt__bar"><span class="prompt__tool">Kling 2.5</span><span class="prompt__ill">ilustra: golden hour ~3400K</span><button type="button" class="prompt__copy">Copiar</button></div>
       <pre>Slow push-in, warm golden-hour sunlight (~3400K) raking from camera-left, long soft shadows, dust motes catching the light, gentle wind in the grass, warm highlights and cool blue shadows, subject's skin glowing naturally — duration 5s</pre></div>
 
     <div class="lesson">
@@ -1813,10 +1813,10 @@ negative_prompt: talking, lips moving, fast head turn, warping hands</pre></div>
       <p>Un LUT creativo <b>asume un espacio de entrada específico</b>. Un pack de "cinematic LUTs" que dice "para S-Log3/S-Gamut3.Cine" da resultados rotos si lo tiras sobre material Rec.709 o sobre otra curva log. Los LUTs <b>no son universales</b>: cada uno declara su espacio de entrada obligatorio en su nombre o documentación. El amateur baja un pack y lo aplica a cualquier footage esperando magia; el resultado son colores imposibles porque le está dando a la tabla un input que no espera. Regla: primero normalizas al espacio que el LUT espera, después aplicas el LUT.</p>
     </div>
 
-    <div class="prompt"><div class="prompt__bar"><span class="prompt__tool">ffmpeg</span><span class="prompt__ill">ilustra: log→709, LUT técnico oficial</span><button class="prompt__copy">Copiar</button></div>
+    <div class="prompt"><div class="prompt__bar"><span class="prompt__tool">ffmpeg</span><span class="prompt__ill">ilustra: log→709, LUT técnico oficial</span><button type="button" class="prompt__copy">Copiar</button></div>
       <pre>ffmpeg -i slog3_clip.mov -vf "lut3d=Sony_SLog3SGamut3Cine_To_LC-709_65.cube" -c:v prores_ks -profile:v 3 rec709_normalized.mov</pre></div>
 
-    <div class="prompt"><div class="prompt__bar"><span class="prompt__tool">ffmpeg</span><span class="prompt__ill">ilustra: broadcast-safe + tagging Rec.709</span><button class="prompt__copy">Copiar</button></div>
+    <div class="prompt"><div class="prompt__bar"><span class="prompt__tool">ffmpeg</span><span class="prompt__ill">ilustra: broadcast-safe + tagging Rec.709</span><button type="button" class="prompt__copy">Copiar</button></div>
       <pre>ffmpeg -i graded.mov -vf "scale=in_range=full:out_range=limited,format=yuv420p" -color_range tv -colorspace bt709 -color_primaries bt709 -color_trc bt709 -c:v libx264 -crf 16 broadcast_safe_709.mp4</pre></div>
 
     <div class="ours"><div class="ours__i">🏠</div><div class="ours__b"><b>En el sistema de creación y edición de videos de Tomi.</b> El color no es un LUT único por video: usamos un <b>sistema de 2 LUTs canónicos</b> según el pattern narrativo. <code>LUT_NARRATIVE</code> (warm/eerie) para historias con archetypes humanos con nombres — su CSS canónico es <code>filter: contrast(1.15) saturate(0.85) brightness(0.95) sepia(0.08) hue-rotate(-10deg)</code>, tonos ocres/sienas, negros crushed y un solo acento de color que "cuts through". <code>LUT_CHOICE</code> (cool/cinematic) para decisiones binarias visuales (dos puertas, dos caminos): <code>contrast(1.20) saturate(0.95) hue-rotate(5deg)</code>, tintes verdosos/cian. El decision tree y todos los parámetros viven en <code>ai-video-production/COLOR-GRADING.md</code>.</div></div>
@@ -1882,7 +1882,7 @@ negative_prompt: talking, lips moving, fast head turn, warping hands</pre></div>
         <div class="ai__lens break"><b>⚠ Dónde la IA lo rompe (y cómo mitigarlo)</b> — La <b>coherencia de mundo deriva entre clips</b> porque cada uno se genera aislado: las paredes cambian de textura, un cuadro aparece y desaparece, la ropa cambia de corte o de color, un objeto migra de lugar. No se ve en un clip suelto; salta en el montaje. Detéctalo comparando el set y el wardrobe frame contra frame entre clips consecutivos. Mitígalo con imágenes de referencia del set + descripción idéntica de props y prendas en cada prompt + keyframing end-frame→start-frame; los mismatches inevitables se esconden con cutaways.</div>
       </div></div>
 
-    <div class="prompt"><div class="prompt__bar"><span class="prompt__tool">Flux / Midjourney v7</span><span class="prompt__ill">ilustra: set art-directed coherente</span><button class="prompt__copy">Copiar</button></div>
+    <div class="prompt"><div class="prompt__bar"><span class="prompt__tool">Flux / Midjourney v7</span><span class="prompt__ill">ilustra: set art-directed coherente</span><button type="button" class="prompt__copy">Copiar</button></div>
       <pre>1970s working-class kitchen, art-directed for lived-in realism: chipped enamel stove, faded floral wallpaper peeling at one corner, a half-drunk cup of coffee with a lipstick mark, mismatched wooden chairs, warm tungsten practical over the table, wardrobe a worn mustard cardigan — every prop period-consistent and slightly used, no pristine surfaces --ar 16:9 --style raw</pre></div>
 
     <div class="lesson">
@@ -1905,7 +1905,7 @@ negative_prompt: talking, lips moving, fast head turn, warping hands</pre></div>
         <div class="ai__lens break"><b>⚠ Dónde la IA lo rompe (y cómo mitigarlo)</b> — El <b>estado físico deriva entre clips</b> (nivel de líquido, vela, posición de props, dirección de luz, hora del día) y, junto con eso, el <b>eyeline se desvía y el eje de 180° se cruza</b> porque cada clip nace aislado. En el montaje el personaje mira al lado equivocado o el objeto cambia solo. Detéctalo comparando el frame final de un clip con el inicial del siguiente y verificando la dirección de mirada al ensamblar. Mitígalo con end-frame→start-frame keyframing, imágenes de referencia y ocultando los mismatches con cutaways/insertos.</div>
       </div></div>
 
-    <div class="prompt"><div class="prompt__bar"><span class="prompt__tool">Kling 2.5</span><span class="prompt__ill">ilustra: continuidad end-frame + screen direction</span><button class="prompt__copy">Copiar</button></div>
+    <div class="prompt"><div class="prompt__bar"><span class="prompt__tool">Kling 2.5</span><span class="prompt__ill">ilustra: continuidad end-frame + screen direction</span><button type="button" class="prompt__copy">Copiar</button></div>
       <pre>Continuous shot, same character and wardrobe as the uploaded reference frame, camera locked. Character looking screen-LEFT throughout. Candle on the table stays the same height, wine glass stays half-full, light comes from screen-left. Slow subtle push-in only — no cut, no change of props, wardrobe or light direction. Start frame = uploaded reference. Duration 5s</pre></div>
 
     <div class="stdnum"><div class="stdnum__val"><div class="stdnum__num">29.97 fps</div><div class="stdnum__label">timecode drop-frame vs non-drop</div></div>
@@ -1942,7 +1942,7 @@ negative_prompt: talking, lips moving, fast head turn, warping hands</pre></div>
         <div class="ai__lens break"><b>⚠ Dónde la IA lo rompe (y cómo mitigarlo)</b> — Los generadores producen <b>ojos muertos, parpadeo mecánico y lip-sync flotante</b> — el rostro lee "muerto" aunque sea nítido — y entre planos generados por separado el <b>eyeline deriva y el eje de 180° se cruza</b>. Detéctalo mirando específicamente los ojos y la mandíbula a velocidad real (no en un frame congelado, que oculta el problema temporal) y verificando la dirección de mirada al ensamblar. Mitígalo declarando la screen direction por shot, re-sincronizando el labio en post y escondiendo los peores planos con cutaways.</div>
       </div></div>
 
-    <div class="prompt"><div class="prompt__bar"><span class="prompt__tool">Kling 2.5 / Veo</span><span class="prompt__ill">ilustra: rostro vivo, eyeline dirigido</span><button class="prompt__copy">Copiar</button></div>
+    <div class="prompt"><div class="prompt__bar"><span class="prompt__tool">Kling 2.5 / Veo</span><span class="prompt__ill">ilustra: rostro vivo, eyeline dirigido</span><button type="button" class="prompt__copy">Copiar</button></div>
       <pre>Photorealistic medium close-up, 85mm, soft key light with a visible catchlight in the eyes. Subject's gaze directed just off-lens to camera-LEFT as if listening, natural asymmetric blink, micro-expression of held breath — subtle brow tension, lips slightly parted. Real skin with pore texture, no waxy smoothing. Gentle handheld, duration 5s</pre></div>
 
     <div class="lesson">
@@ -2054,7 +2054,7 @@ negative_prompt: talking, lips moving, fast head turn, warping hands</pre></div>
         <div class="ai__lens break"><b>⚠ Dónde la IA lo rompe (y cómo mitigarlo)</b> — Los generadores tienden a <b>abrir con un fade-in o una cámara que "entra" lentamente</b> — exactamente lo contrario del cold open — y arruinan el frame 0 con medio segundo de negro o de establishing calmo. No lo notas en el clip aislado ("se ve cinematográfico"); en el feed es una fuga instantánea. Detéctalo mirando literalmente el frame en t=0.0s del render; mitígalo recortando el arranque perezoso y/o generando con instrucción explícita de tensión inmediata.</div>
       </div></div>
 
-    <div class="prompt"><div class="prompt__bar"><span class="prompt__tool">Kling 2.5</span><span class="prompt__ill">ilustra: cold open, pattern interrupt en frame 0</span><button class="prompt__copy">Copiar</button></div>
+    <div class="prompt"><div class="prompt__bar"><span class="prompt__tool">Kling 2.5</span><span class="prompt__ill">ilustra: cold open, pattern interrupt en frame 0</span><button type="button" class="prompt__copy">Copiar</button></div>
       <pre>POV first-person, hands gripping a rusted metal door handle in a dark basement, single bare bulb swinging overhead, fast aggressive push-in toward the handle, shallow depth of field, dust motes drifting in the light beam, handheld micro-shake, 24fps cinematic, high tension rising within the first 0.5 seconds, no slow fade-in — duration 5s, camera: dolly-in</pre></div>
 
     <div class="lesson">
@@ -2100,7 +2100,7 @@ negative_prompt: talking, lips moving, fast head turn, warping hands</pre></div>
         <div class="ai__lens break"><b>⚠ Dónde la IA lo rompe (y cómo mitigarlo)</b> — Al encadenar micro-clips generados aparece la <b>ruptura de continuidad entre clips</b>: el mismo personaje cambia de ropa, de peinado o el fondo se reorganiza de corte a corte, y a 1.5s por plano el ojo lo registra como "esto es raro / esto es IA". No se ve en un clip aislado; sí en el montaje rápido. Detéctalo revisando el opener plano por plano; mitígalo fijando semilla/imagen de referencia entre generaciones y descartando los planos donde la identidad o el set derivan. Cortar rápido AMPLIFICA los saltos de continuidad, no los esconde.</div>
       </div></div>
 
-    <div class="prompt"><div class="prompt__bar"><span class="prompt__tool">ffmpeg</span><span class="prompt__ill">ilustra: opener 1.2–1.8s, regla &lt;5s sin cambio</span><button class="prompt__copy">Copiar</button></div>
+    <div class="prompt"><div class="prompt__bar"><span class="prompt__tool">ffmpeg</span><span class="prompt__ill">ilustra: opener 1.2–1.8s, regla &lt;5s sin cambio</span><button type="button" class="prompt__copy">Copiar</button></div>
       <pre># clips.txt lista 7 planos DISTINTOS de ~1.4s (wide → medium → insert → reaction → text-card → b-roll → push-in)
 # cada uno un tipo de plano diferente para forzar re-enganche; ningun bloque supera 5s sin cambio
 ffmpeg -f concat -safe 0 -i clips.txt -c copy opener.mp4</pre></div>
@@ -2135,7 +2135,7 @@ ffmpeg -f concat -safe 0 -i clips.txt -c copy opener.mp4</pre></div>
         <div class="ai__lens break"><b>⚠ Dónde la IA lo rompe (y cómo mitigarlo)</b> — El TTS <b>mispronuncia nombres propios</b> sobre todo cuando hay puntos suspensivos justo antes ("…Bruno"), lo que dispara una cascada de regeneraciones; y su fluidez tienta a sobre-narrar porque "generar más línea es gratis". Detecta la pronunciación escuchando cada nombre propio del clip; mitiga quitando los "…" antes de sustantivos propios y respetando el presupuesto de 0.7–0.9 palabras/seg aunque el modelo te deje meter más.</div>
       </div></div>
 
-    <div class="prompt"><div class="prompt__bar"><span class="prompt__tool">Claude</span><span class="prompt__ill">ilustra: open loop + auditoría but/therefore</span><button class="prompt__copy">Copiar</button></div>
+    <div class="prompt"><div class="prompt__bar"><span class="prompt__tool">Claude</span><span class="prompt__ill">ilustra: open loop + auditoría but/therefore</span><button type="button" class="prompt__copy">Copiar</button></div>
       <pre>Rewrite this 25-second reel script applying one open loop:
 - The opening beat (0-2s) plants ONE concrete, closable question about [X], stated as a promise, not answered.
 - The middle beats sustain it with but/therefore causality (never "and then"); each beat changes emotional value.
@@ -2294,7 +2294,7 @@ Keep narration at 0.7-0.9 words/sec so the visuals breathe. Mark where the loop 
     </div>
 
     <div class="prompt">
-      <div class="prompt__bar"><span class="prompt__tool">Kling 2.5</span><span class="prompt__ill">ilustra: match-on-action (clip A → clip B)</span><button class="prompt__copy">Copiar</button></div>
+      <div class="prompt__bar"><span class="prompt__tool">Kling 2.5</span><span class="prompt__ill">ilustra: match-on-action (clip A → clip B)</span><button type="button" class="prompt__copy">Copiar</button></div>
       <pre>Clip A: POV first-person, a hand reaches toward an old brass door handle in a dim hallway, warm tungsten key light from the left, the hand grips the handle and BEGINS to turn it clockwise, motion stops mid-turn, 24fps cinematic motion blur, shot on 35mm.
 
 Clip B: POV first-person, the SAME brass door handle mid-turn, the hand COMPLETES turning it clockwise and the door starts to open revealing darkness, identical warm tungsten light from the left, 24fps cinematic motion blur, 35mm.
@@ -2317,7 +2317,7 @@ Clip B: POV first-person, the SAME brass door handle mid-turn, the hand COMPLETE
     </div>
 
     <div class="prompt">
-      <div class="prompt__bar"><span class="prompt__tool">ffmpeg xfade</span><span class="prompt__ill">ilustra: cross-dissolve narrativo de 1s</span><button class="prompt__copy">Copiar</button></div>
+      <div class="prompt__bar"><span class="prompt__tool">ffmpeg xfade</span><span class="prompt__ill">ilustra: cross-dissolve narrativo de 1s</span><button type="button" class="prompt__copy">Copiar</button></div>
       <pre># A dura 5s; la disolvencia de 1s empieza a los 4s y termina al arrancar B.
 # OJO: xfade solapa los clips → resta 1s al total del timeline o el video se acorta.
 ffmpeg -i A.mp4 -i B.mp4 \
@@ -2408,7 +2408,7 @@ ffmpeg -i A.mp4 -i B.mp4 \
     </div>
 
     <div class="prompt">
-      <div class="prompt__bar"><span class="prompt__tool">ffmpeg</span><span class="prompt__ill">ilustra: white flash de 2 frames en el downbeat</span><button class="prompt__copy">Copiar</button></div>
+      <div class="prompt__bar"><span class="prompt__tool">ffmpeg</span><span class="prompt__ill">ilustra: white flash de 2 frames en el downbeat</span><button type="button" class="prompt__copy">Copiar</button></div>
       <pre># Flash blanco de 2 frames en los frames 120-121 = el downbeat a 5.0s @24fps.
 # 2 frames = 0.083s: registra como golpe, no como movimiento lento.
 ffmpeg -i in.mp4 \
@@ -2506,13 +2506,13 @@ ffmpeg -i in.mp4 \
         <div class="ai__lens break"><b>⚠ Dónde la IA lo rompe (y cómo mitigarlo)</b> Los modelos generan audio "inventado" que no matchea la fuente: una llamada que suena full-range, o ambiente genérico que no coincide con lo que se ve. Detección: escucha si el sonido "pertenece" al plano. Mitigación: pide audio diegético explícito y con fuente nombrada; si el modelo no tiene audio nativo, no le pidas efectos — genera mudo y diseña el sonido por capas en post.</div>
       </div></div>
 
-    <div class="prompt"><div class="prompt__bar"><span class="prompt__tool">Veo 3</span><span class="prompt__ill">ilustra: audio diegético con perspectiva</span><button class="prompt__copy">Copiar</button></div>
+    <div class="prompt"><div class="prompt__bar"><span class="prompt__tool">Veo 3</span><span class="prompt__ill">ilustra: audio diegético con perspectiva</span><button type="button" class="prompt__copy">Copiar</button></div>
       <pre>Rainy alley at night, POV walking. Diegetic audio only: heavy rain on metal,
 footsteps splashing in puddles, distant thunder, a flickering neon sign buzzing.
 No music. Sound perspective matches camera — closer sounds louder, farther sounds
 quieter and slightly reverberant.</pre></div>
 
-    <div class="prompt"><div class="prompt__bar"><span class="prompt__tool">ffmpeg</span><span class="prompt__ill">ilustra: futz telefónico 300 Hz–3.4 kHz</span><button class="prompt__copy">Copiar</button></div>
+    <div class="prompt"><div class="prompt__bar"><span class="prompt__tool">ffmpeg</span><span class="prompt__ill">ilustra: futz telefónico 300 Hz–3.4 kHz</span><button type="button" class="prompt__copy">Copiar</button></div>
       <pre>ffmpeg -i voice.wav -af "highpass=f=300, lowpass=f=3400,
 acompressor=threshold=-18dB:ratio=4:makeup=3" voice_phone_futz.wav</pre></div>
 
@@ -2560,7 +2560,7 @@ acompressor=threshold=-18dB:ratio=4:makeup=3" voice_phone_futz.wav</pre></div>
         <div class="ai__lens break"><b>⚠ Dónde la IA lo rompe (y cómo mitigarlo)</b> Dos fallas típicas: (a) <b>deriva de timbre entre generaciones</b> — regenerar una frase da una voz sutilmente distinta que no pega con las demás; mitiga fijando voz/settings y regenerando el bloque entero, no una frase suelta. (b) <b>sibilancia exagerada</b> del TTS que el realce de presencia amplifica; detéctala escuchando las "s" y contrólala con de-esser antes de subir agudos.</div>
       </div></div>
 
-    <div class="prompt"><div class="prompt__bar"><span class="prompt__tool">ffmpeg</span><span class="prompt__ill">ilustra: cadena de voz completa + normalización</span><button class="prompt__copy">Copiar</button></div>
+    <div class="prompt"><div class="prompt__bar"><span class="prompt__tool">ffmpeg</span><span class="prompt__ill">ilustra: cadena de voz completa + normalización</span><button type="button" class="prompt__copy">Copiar</button></div>
       <pre>ffmpeg -i vo_raw.wav -af "highpass=f=90,
 equalizer=f=300:t=q:w=1.2:g=-3,
 equalizer=f=3000:t=q:w=1.5:g=2,
@@ -2629,7 +2629,7 @@ loudnorm=I=-16:TP=-1:LRA=11" vo_processed.wav</pre></div>
 
     <div class="ours"><div class="ours__i">🏠</div><div class="ours__b"><b>En el sistema de creación y edición de videos de Tomi.</b> El <b>−14 LUFS ±0.5</b> es HARD RULE universal, con evidencia empírica: 7/7 referentes medidos entre −13.76 y −14.45 LUFS (promedio −13.96). Se masteriza con <code>scripts/master-audio.sh</code> (loudnorm 2-pass, linear=true, salida AAC 192k con <code>-c:v copy</code>) y es el <b>gate Q18</b> del pre-render-gate: si el LUFS no cae entre −14.5 y −13.5, bloquea el render. Casos disparadores: <code>pueblo-fantasma-desierto v2</code> se publicó sin medir y se vio "apagado" al lado de la referencia. El doc autoritativo es <code>AUDIO-MASTERING.md</code>.</div></div>
 
-    <div class="prompt"><div class="prompt__bar"><span class="prompt__tool">ffmpeg loudnorm</span><span class="prompt__ill">ilustra: master 2-pass a −14 LUFS / −1 dBTP</span><button class="prompt__copy">Copiar</button></div>
+    <div class="prompt"><div class="prompt__bar"><span class="prompt__tool">ffmpeg loudnorm</span><span class="prompt__ill">ilustra: master 2-pass a −14 LUFS / −1 dBTP</span><button type="button" class="prompt__copy">Copiar</button></div>
       <pre># Pass 1 — medir (no aplica cambios):
 ffmpeg -i mix.wav -af loudnorm=I=-14:TP=-1:LRA=11:print_format=json -f null -
 
@@ -2725,7 +2725,7 @@ ffmpeg -i mix.wav -af loudnorm=I=-14:TP=-1:LRA=11:measured_I=&lt;val&gt;:measure
         <div class="ai__lens break"><b>⚠ Dónde la IA lo rompe (y cómo mitigarlo)</b> — Los autogeneradores producen en masa cues con <b>CPS por encima de 20, sin gap entre ellos y hasta solapados</b>, más "alucinaciones" de texto sobre tramos de silencio. No lo ves reproduciendo el video una vez ("los subtítulos aparecen"); lo ves corriendo el script de CPS y revisando gaps y solapamientos. Mitígalo con el chequeo de CPS obligatorio, forzando el gap mínimo de 2 frames y borrando los cues fantasma sobre silencio.</div>
       </div></div>
 
-    <div class="prompt"><div class="prompt__bar"><span class="prompt__tool">Whisper + Python</span><span class="prompt__ill">ilustra: SRT base + gate de CPS 17/20</span><button class="prompt__copy">Copiar</button></div>
+    <div class="prompt"><div class="prompt__bar"><span class="prompt__tool">Whisper + Python</span><span class="prompt__ill">ilustra: SRT base + gate de CPS 17/20</span><button type="button" class="prompt__copy">Copiar</button></div>
       <pre>whisper narracion.wav --model large-v3 --language Spanish --output_format srt --max_line_width 42 --max_line_count 2 --word_timestamps False -o captions/
 
 # gate de CPS: imprime los cues que superan 17 CPS (alargar o partir)
@@ -2819,7 +2819,7 @@ python -c "import pysrt; s=pysrt.open('captions/narracion.srt'); [print(i+1, rou
         <div class="ai__lens break"><b>⚠ Dónde la IA lo rompe (y cómo mitigarlo)</b> — ffmpeg por defecto <b>pega el caption al borde inferior</b> (donde lo tapa la UI) o lo deja a la altura de la boca, y la diarización <b>etiqueta mal a los hablantes</b> cuando las voces se solapan o suenan parecido. No se ve en el SRT ni escuchando; se ve extrayendo frames del render y leyéndolos. Mitígalo fijando un MarginV que te ponga en ~Y62–66%, y pasando la diarización por un ojo humano antes de cerrar el SDH.</div>
       </div></div>
 
-    <div class="prompt"><div class="prompt__bar"><span class="prompt__tool">ffmpeg</span><span class="prompt__ill">ilustra: burn-in sans + shadow + lower-third alto</span><button class="prompt__copy">Copiar</button></div>
+    <div class="prompt"><div class="prompt__bar"><span class="prompt__tool">ffmpeg</span><span class="prompt__ill">ilustra: burn-in sans + shadow + lower-third alto</span><button type="button" class="prompt__copy">Copiar</button></div>
       <pre>ffmpeg -i video.mp4 -vf "subtitles=captions.srt:force_style='FontName=Arial,Fontsize=42,PrimaryColour=&amp;H00FFFFFF,OutlineColour=&amp;H00000000,BorderStyle=1,Outline=2,Shadow=2,Alignment=2,MarginV=700'" -c:a copy salida.mp4</pre></div>
 
     <div class="lesson">
@@ -2840,7 +2840,7 @@ python -c "import pysrt; s=pysrt.open('captions/narracion.srt'); [print(i+1, rou
         <div class="ai__lens break"><b>⚠ Dónde la IA lo rompe (y cómo mitigarlo)</b> — Dos fallos silenciosos: correr Whisper <b>vanilla</b> (±500 ms) creyendo que alcanza — el highlight va medio adelantado o atrasado toda la pieza — y alinear sobre el <b>TTS crudo a 1x</b> cuando el audio final quedó acelerado con atempo 2x, así que todos los timestamps quedan al doble de velocidad y desfasados. Detéctalo comparando el resalte con la voz frame a frame en un par de puntos; mitígalo usando WhisperX (no Whisper pelado) y alineando SIEMPRE sobre el mp3 ya procesado a atempo, nunca sobre el raw.</div>
       </div></div>
 
-    <div class="prompt"><div class="prompt__bar"><span class="prompt__tool">WhisperX</span><span class="prompt__ill">ilustra: word-level ±50ms → ASS karaoke</span><button class="prompt__copy">Copiar</button></div>
+    <div class="prompt"><div class="prompt__bar"><span class="prompt__tool">WhisperX</span><span class="prompt__ill">ilustra: word-level ±50ms → ASS karaoke</span><button type="button" class="prompt__copy">Copiar</button></div>
       <pre>whisperx narracion-2x.wav --model large-v3 --language es --align_model WAV2VEC2_ASR_LARGE_LV60K_960H --highlight_words True --output_format ass -o captions/</pre></div>
 
     <div class="ours"><div class="ours__i">🏠</div><div class="ours__b"><b>En el sistema de creación y edición de videos de Tomi.</b> Dos reglas duras cierran el círculo: <b>Whisper corre sobre el audio POST atempo 2x, nunca sobre el raw TTS</b> (los timestamps del raw quedan en velocidad 1x y se desincronizan), con <code>word_timestamps=True</code> y <code>language='es'</code>; y el caption <b>chunkea toda la narración del clip en cues progresivos word-timed</b> (típico intro: 3 frases), nunca un bloque estático que se trunca a la primera frase. Además el <code>-t</code> (offset del bloque en el timeline) es obligatorio, y hay que eliminar los <code>opacity:0</code> intermedios entre frases o aparecen gaps de 0.3–0.6s sin caption. Nunca hand-timing. En <code>ai-video-production/CAPTIONS.md</code> y <code>scripts/captions.py</code>.</div></div>
@@ -2977,7 +2977,7 @@ python -c "import pysrt; s=pysrt.open('captions/narracion.srt'); [print(i+1, rou
         <div class="ai__lens break"><b>⚠ Dónde la IA lo rompe (y cómo mitigarlo)</b> Falla concreta: <b>deriva de tono de piel y de look entre clips</b>. Cada clip generado sale con una temperatura de color y un contraste sutilmente distintos, y al montarlos la piel salta de un plano a otro. Detección: monta los clips y mira el RGB parade y el vectorscope clip por clip — la piel debe caer siempre sobre la misma línea. Mitigación: balancea cada clip a un neutral común ANTES de aplicar el look global, y aplica el look como un nodo compartido sobre todos, no clip por clip.</div>
       </div></div>
 
-    <div class="prompt"><div class="prompt__bar"><span class="prompt__tool">ffmpeg (lut3d)</span><span class="prompt__ill">ilustra: transform técnico → look, en ese orden</span><button class="prompt__copy">Copiar</button></div>
+    <div class="prompt"><div class="prompt__bar"><span class="prompt__tool">ffmpeg (lut3d)</span><span class="prompt__ill">ilustra: transform técnico → look, en ese orden</span><button type="button" class="prompt__copy">Copiar</button></div>
       <pre>ffmpeg -i slog3_source.mov -vf "lut3d=file=SLog3_to_Rec709.cube,
 lut3d=file=creative_look.cube" -c:v prores_ks -profile:v 3 graded.mov</pre></div>
 
@@ -3005,7 +3005,7 @@ lut3d=file=creative_look.cube" -c:v prores_ks -profile:v 3 graded.mov</pre></div
         <div class="ai__lens break"><b>⚠ Dónde la IA lo rompe (y cómo mitigarlo)</b> Falla concreta: el modelo aplica un <b>bloom blanco genérico</b> o una halation exagerada que enferma la imagen. Detección: mira el color del glow — si es blanco y uniforme, es bloom, no halation; si la imagen se ve "rosada/enferma", el mix está demasiado alto. Mitigación: controla la halation como capa propia con mix ≤30% y hue rojo/naranja aislado a las altas luces, no un glow global. Y aplica grain SIEMPRE al final: si un clip IA ya viene con "grano" inventado, se multiplica con el tuyo y se convierte en ruido de compresión.</div>
       </div></div>
 
-    <div class="prompt"><div class="prompt__bar"><span class="prompt__tool">ffmpeg</span><span class="prompt__ill">ilustra: halation cromática en highlights</span><button class="prompt__copy">Copiar</button></div>
+    <div class="prompt"><div class="prompt__bar"><span class="prompt__tool">ffmpeg</span><span class="prompt__ill">ilustra: halation cromática en highlights</span><button type="button" class="prompt__copy">Copiar</button></div>
       <pre>ffmpeg -i graded.mov -filter_complex "[0:v]split=2[base][hi];
 [hi]lutrgb=r='if(gt(val,200),val,0)':g='if(gt(val,200),val*0.4,0)':b='if(gt(val,200),val*0.2,0)',gblur=sigma=18[glow];
 [base][glow]blend=all_mode=screen:all_opacity=0.25" -c:v prores_ks -profile:v 3 halation.mov</pre></div>
@@ -3053,11 +3053,11 @@ lut3d=file=creative_look.cube" -c:v prores_ks -profile:v 3 graded.mov</pre></div
         <div class="ai__lens break"><b>⚠ Dónde la IA lo rompe (y cómo mitigarlo)</b> Falla concreta: <b>pérdida generacional invisible</b>. Como cada clip IA ya viene comprimido, si además exportas el master en H.264 y desde ahí sacas cada versión, acumulas varias pasadas de codec inter-frame — el banding y los artefactos de bloque aparecen recién en el feed, no en tu monitor. Detección: mira degradés (cielos, glows) al 100% en el deliverable final, no en la timeline. Mitigación: master en ProRes intra-frame, delivery una sola vez por plataforma desde ese master, y grain sutil al final que enmascara el banding residual.</div>
       </div></div>
 
-    <div class="prompt"><div class="prompt__bar"><span class="prompt__tool">ffmpeg</span><span class="prompt__ill">ilustra: master ProRes 422 HQ (10-bit 4:2:2)</span><button class="prompt__copy">Copiar</button></div>
+    <div class="prompt"><div class="prompt__bar"><span class="prompt__tool">ffmpeg</span><span class="prompt__ill">ilustra: master ProRes 422 HQ (10-bit 4:2:2)</span><button type="button" class="prompt__copy">Copiar</button></div>
       <pre>ffmpeg -i timeline_export.mov -c:v prores_ks -profile:v 3 -pix_fmt yuv422p10le
 -vendor apl0 -c:a pcm_s24le master_422HQ.mov</pre></div>
 
-    <div class="prompt"><div class="prompt__bar"><span class="prompt__tool">ffmpeg (libx264)</span><span class="prompt__ill">ilustra: deliverable YouTube 1080p desde el master</span><button class="prompt__copy">Copiar</button></div>
+    <div class="prompt"><div class="prompt__bar"><span class="prompt__tool">ffmpeg (libx264)</span><span class="prompt__ill">ilustra: deliverable YouTube 1080p desde el master</span><button type="button" class="prompt__copy">Copiar</button></div>
       <pre>ffmpeg -i master_422HQ.mov -c:v libx264 -profile:v high -pix_fmt yuv420p
 -preset slow -crf 18 -g 48 -keyint_min 48 -movflags +faststart
 -c:a aac -b:a 384k -ar 48000 youtube_1080p.mp4</pre></div>
@@ -3145,7 +3145,7 @@ lut3d=file=creative_look.cube" -c:v prores_ks -profile:v 3 graded.mov</pre></div
         <div class="ai__lens break"><b>⚠ Dónde la IA lo rompe (y cómo mitigarlo)</b> Pedirle a Kling/Seedance "strobe / flashing lights" produce secuencias por encima del límite seguro sin ningún aviso — el modelo optimiza "se ve intenso", no "es seguro". Modo de falla concreto: un plano de "discoteca" o "tormenta eléctrica" devuelve 8–12 flashes/segundo. Detéctalo extrayendo los cuadros del tramo (<code>ffmpeg -ss … -frames:v 1</code>) y contando transiciones a blanco; mitígalo regenerando con prompt de flash único o rehaciendo el destello a mano en post.</div>
       </div></div>
 
-    <div class="prompt"><div class="prompt__bar"><span class="prompt__tool">Kling 2.5</span><span class="prompt__ill">ilustra: destello único seguro</span><button class="prompt__copy">Copiar</button></div>
+    <div class="prompt"><div class="prompt__bar"><span class="prompt__tool">Kling 2.5</span><span class="prompt__ill">ilustra: destello único seguro</span><button type="button" class="prompt__copy">Copiar</button></div>
       <pre>POV first-person, dark abandoned corridor. A single lightning flash blooms once through a far window, then fades over ~0.5s — one discrete event, not a repeating strobe. Handheld micro-shake, cold moonlight key 5600K, deep shadows. No flickering, no rapid repeated flashes.</pre></div>
 
     <div class="ours"><div class="ours__i">🏠</div><div class="ours__b"><b>En el sistema de creación y edición de videos de Tomi.</b> El white-flash del formato horror vive en la capa de SFX con volumen de impacto <code>0.55–0.65</code> (mix canónico) y suele ir con <code>camera-shake</code>. Ese combo es potente y también es el punto ciego de seguridad: hoy ningún gate cuenta los flashes. Antes de mandar a render, extrae los cuadros del tramo del flash y verifica que no haya más de 3 transiciones a blanco por segundo. Es un chequeo manual hasta que exista un <code>audit-flash-rate</code> dedicado.</div></div>
@@ -3197,7 +3197,7 @@ lut3d=file=creative_look.cube" -c:v prores_ks -profile:v 3 graded.mov</pre></div
         <div class="ai__lens break"><b>⚠ Dónde la IA lo rompe (y cómo mitigarlo)</b> La metadata de procedencia se pierde: casi todo pipeline de edición/recompresión (y la subida a la plataforma) <em>borra</em> los Content Credentials del archivo. Modo de falla: crees que firmaste el video y llega sin credenciales al feed. Mitígalo no dependiendo solo de la metadata — activa también el toggle nativo de la plataforma y, si el riesgo legal es alto, quema una etiqueta visible que ninguna recompresión pueda arrancar.</div>
       </div></div>
 
-    <div class="prompt"><div class="prompt__bar"><span class="prompt__tool">Nano Banana Pro</span><span class="prompt__ill">ilustra: etiqueta legible en cuadro</span><button class="prompt__copy">Copiar</button></div>
+    <div class="prompt"><div class="prompt__bar"><span class="prompt__tool">Nano Banana Pro</span><span class="prompt__ill">ilustra: etiqueta legible en cuadro</span><button type="button" class="prompt__copy">Copiar</button></div>
       <pre>Lower-corner disclosure chip on a video frame, small rounded pill, semi-transparent dark background, crisp legible sans-serif text reading exactly "Contenido generado con IA". High contrast white text, sharp edges, no distortion, no gibberish characters. 1080x1920 vertical, chip anchored bottom-left inside safe zone.</pre></div>
 
     <div class="uu"><div class="uu__h">💡 Lo que no sabías que no sabías</div>
@@ -3236,7 +3236,7 @@ lut3d=file=creative_look.cube" -c:v prores_ks -profile:v 3 graded.mov</pre></div
       <p>Los ads (German, Caro, Mamá) se publican comercialmente, así que el riesgo de derechos es económico y directo. Música comercial necesita <b>dos</b> licencias: sync license (para acoplarla a imagen) y master license (para usar esa grabación específica). Las librerías como Epidemic Sound o Artlist resuelven ambas dentro de su suscripción, pero solo dentro del scope de su término — léelo. Además: derechos de imagen/likeness de personas identificables, y marcas registradas que aparezcan en cuadro. Usar una canción popular "porque queda bien" sin sync license es un strike, un reclamo de copyright o una demanda esperando a pasar.</p>
     </div>
 
-    <div class="prompt"><div class="prompt__bar"><span class="prompt__tool">ElevenLabs Music</span><span class="prompt__ill">ilustra: música original sin clearance</span><button class="prompt__copy">Copiar</button></div>
+    <div class="prompt"><div class="prompt__bar"><span class="prompt__tool">ElevenLabs Music</span><span class="prompt__ill">ilustra: música original sin clearance</span><button type="button" class="prompt__copy">Copiar</button></div>
       <pre>Instrumental cinematic tension bed for a 60s vertical ad, 90 BPM, dark ambient pads with a soft pulse, no melody hooks that distract from voiceover, clean loop points, mixed to sit at -16 LUFS under narration. Original composition, no recognizable riffs.</pre></div>
 
     <div class="dodont">
@@ -3316,7 +3316,7 @@ lut3d=file=creative_look.cube" -c:v prores_ks -profile:v 3 graded.mov</pre></div
         <div class="ai__lens break"><b>⚠ Dónde la IA lo rompe (y cómo mitigarlo)</b> Gemini no tiene memoria entre llamadas: cada imagen nace aislada. En mina-abandonada el mismo Santi apareció con casco LED blanco en H1 y beanie con chaqueta marrón en H6 — narrativamente el mismo, pero el viewer no hace la conexión, y ningún QA por-frame lo detectó. Se caza solo end-to-end. Mitigación: shot-list + anchor por look, y revisión humana de continuidad de personaje sobre el render completo.</div>
       </div></div>
 
-    <div class="prompt"><div class="prompt__bar"><span class="prompt__tool">Gemini Nano Banana</span><span class="prompt__ill">ilustra: anchor de personaje</span><button class="prompt__copy">Copiar</button></div>
+    <div class="prompt"><div class="prompt__bar"><span class="prompt__tool">Gemini Nano Banana</span><span class="prompt__ill">ilustra: anchor de personaje</span><button type="button" class="prompt__copy">Copiar</button></div>
       <pre>Close-up frontal portrait of a 30-year-old man, weathered face, short dark hair,
 worn blue work jacket. 85mm lens, eye-level, shallow depth of field. Soft key
 light from camera-left at 3200K plus subtle fill, chiaroscuro shadow on the right
@@ -3366,7 +3366,7 @@ cheek. Calm but wary expression, slight tension in the jaw. Photoreal, no text.<
         <div class="ai__lens break"><b>⚠ Dónde la IA lo rompe (y cómo mitigarlo)</b> El eyeline y el eje de 180° derivan porque cada clip nace por separado: la mirada cambia de dirección y el eje se cruza entre planos. Detección: revisa la dirección de mirada al ensamblar. Mitigación: declara explícitamente la screen direction por shot (mira a cuadro-izquierda / cuadro-derecha). Segundo modo de falla: pedirle "strobe / flashing lights" puede generar secuencias inseguras para epilepsia sin aviso — corre un chequeo de flash-rate y limita a ≤3 flashes por segundo.</div>
       </div></div>
 
-    <div class="prompt"><div class="prompt__bar"><span class="prompt__tool">Kling 2.5 Turbo Pro</span><span class="prompt__ill">ilustra: push-in lento</span><button class="prompt__copy">Copiar</button></div>
+    <div class="prompt"><div class="prompt__bar"><span class="prompt__tool">Kling 2.5 Turbo Pro</span><span class="prompt__ill">ilustra: push-in lento</span><button type="button" class="prompt__copy">Copiar</button></div>
       <pre>Cinematic slow push-in on a lone figure standing in a dim corridor. Camera dollies
 forward at a steady, subtle pace, eye-level. Volumetric light from a single flickering
 source at 2700K, deep shadows. The figure breathes slowly, shoulders rising slightly;
@@ -3534,7 +3534,7 @@ eyes blink once. No other motion. Photoreal, film grain, shallow depth of field.
       +'<div class="taller__row"><span class="taller__k">Objetivo</span><span>'+esc(t.brief)+'</span></div>'
       +'<div class="taller__row"><span class="taller__k">Herramienta</span><span>'+esc(t.tool)+'</span></div>'
       +'<div class="taller__row"><span class="taller__k">Entregable</span><span>'+esc(t.deliverable)+'</span></div>'
-      +'<div class="prompt"><div class="prompt__bar"><span class="prompt__tool">'+esc(t.tool)+'</span><span class="prompt__ill">prompt de arranque</span><button class="prompt__copy">Copiar</button></div><pre>'+esc(t.starter_prompt)+'</pre></div>'
+      +'<div class="prompt"><div class="prompt__bar"><span class="prompt__tool">'+esc(t.tool)+'</span><span class="prompt__ill">prompt de arranque</span><button type="button" class="prompt__copy">Copiar</button></div><pre>'+esc(t.starter_prompt)+'</pre></div>'
       +'<div><p class="eyebrow" style="margin:0 0 5px">Rúbrica de auto-evaluación</p><ul>'+rub+'</ul></div>'
       +(t.autocheck?'<div class="taller__check">🔎 <b>Auto-corrección:</b> '+esc(t.autocheck)+'</div>':'')
       +'</div></div>';
@@ -3546,7 +3546,7 @@ eyes blink once. No other motion. Photoreal, film grain, shallow depth of field.
     }).join('');
     return '<div class="quiz" data-mod="'+mid+'"><div class="quiz__h">📝 Quiz<span class="quiz__counter">'+quiz.length+' preguntas · 70% aprueba</span></div>'
       +'<div class="quiz__body">'+qb+'</div>'
-      +'<div class="quiz__foot"><button class="quiz__btn primary qcheck">Comprobar</button><button class="quiz__btn qretry">Reintentar</button><span class="quiz__result"></span></div></div>';
+      +'<div class="quiz__foot"><button type="button" class="quiz__btn primary qcheck">Comprobar</button><button type="button" class="quiz__btn qretry">Reintentar</button><span class="quiz__result"></span></div></div>';
   }
 
   var order=[].slice.call(document.querySelectorAll('.navlink')).map(function(a){return (a.getAttribute('href')||'').slice(1);}).filter(function(id){return DATA[id];});
