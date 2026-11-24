@@ -1,0 +1,16 @@
+{
+  "name": "cine-video-academy",
+  "private": true,
+  "description": "Herramientas de desarrollo (validación y servidor local) para la Academia de Cine & Video con IA.",
+  "license": "MIT",
+  "type": "module",
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "serve": "python3 -m http.server 8000",
+    "check:html": "npx --yes html-validate@11.22.1 \"*.html\"",
+    "check:links": "node scripts/check-site.mjs",
+    "check": "npm run check:html && npm run check:links"
+  }
+}
